@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { siteConfig } from "@/content/site";
+import { siteConfig, siteHostname } from "@/content/site";
 
 type NavLink = {
   href: string;
@@ -91,7 +91,7 @@ export function Header() {
             href={siteConfig.url}
             className="text-xs tracking-[0.08em] text-muted transition-opacity hover:opacity-60 md:text-sm"
           >
-            zaidduartee.com
+            {siteHostname()}
           </a>
         </div>
       </header>

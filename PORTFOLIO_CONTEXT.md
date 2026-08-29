@@ -9,7 +9,25 @@ Executive technical portfolio for **Zaid Duartee** (CTO / Technical Lead).
 Positions credibility in product, engineering, data systems, geospatial
 intelligence, SaaS, and applied AI — with three published case studies.
 
-**Target URL:** https://zaidduartee.com
+**Production URL:** https://zaid-portfolio-dusky.vercel.app
+
+## Deployment
+
+| Item | Status |
+|------|--------|
+| Vercel production | **Live** at `zaid-portfolio-dusky.vercel.app` |
+| GitHub → Vercel auto-deploy | **Not connected** |
+| Deployment method | Clean-clone + Vercel CLI (`vercel --prod`) |
+| `.vercelignore` | Excludes private source, screenshots, env files |
+
+## Connect integrations
+
+| Integration | Status |
+|-------------|--------|
+| Cal.com booking | **Configured** — `https://cal.com/zaidduartee/20min` (public default in `siteConfig`) |
+| WhatsApp | **Configured** — `https://wa.me/923289771651` (public default in `siteConfig`) |
+| Formspree | **Unconfigured** — email fallback active on Leave a Note |
+| Connect QR | **Enabled** — encodes `https://zaid-portfolio-dusky.vercel.app/connect` |
 
 ## Target audience
 
@@ -24,7 +42,7 @@ intelligence, SaaS, and applied AI — with three published case studies.
 - Tailwind CSS v4 (`app/globals.css` + `@theme inline`)
 - Fonts: Geist Sans, Geist Mono, Instrument Serif
 - ESLint 9, no test framework configured
-- No database, CMS, API routes, or env secrets
+- No database, CMS, or API routes
 
 ## Case studies
 
@@ -46,10 +64,10 @@ MarginAI closing also links back to Noesis
 | Route | Status | Purpose |
 |-------|--------|---------|
 | `/` | Complete | Homepage narrative (11 sections) |
-| `/connect` | Complete | Connect card + actions |
+| `/connect` | Complete | Connect hub, booking, QR, private note |
 | `/work/atlas` | Complete | ATLAS case study (18 sections) |
 | `/work/noesis` | Complete | Noesis case study (18 sections) |
-| `/work/marginai` | Complete | MarginAI case study (17 sections: Hero + 15 numbered + Closing) |
+| `/work/marginai` | Complete | MarginAI case study (17 sections) |
 | `/robots.txt`, `/sitemap.xml` | Complete | SEO |
 
 ## Component map (high level)
@@ -58,10 +76,9 @@ MarginAI closing also links back to Noesis
 - `components/work/atlas/*` — ATLAS case study sections
 - `components/work/noesis/*` — Noesis case study sections
 - `components/work/marginai/*` — MarginAI case study sections
-- `components/connect/*` — Connect page
+- `components/connect/*` — Connect page, booking modal, visitor note form
 - `components/layout/Header.tsx` — Global nav
-- `components/ui/*` — Reveal, ClipReveal, CustomCursor, Magnetic, AnimatedRule
-- `components/providers/InteractionProvider.tsx` — Mounts custom cursor
+- `components/ui/*` — Reveal, Modal, CustomCursor, Magnetic, etc.
 - `content/*.ts` — All copy and structured data
 
 ## Design system
@@ -76,20 +93,19 @@ MarginAI closing also links back to Noesis
 ## Completed work
 
 - Full homepage with motion and responsive patterns
-- Connect page with vCard, CV, email, LinkedIn, GitHub
-- ATLAS case study with video, images, JSON-LD, sanitized public content
-- Noesis case study with Beyond Intelligence imagery, JSON-LD, sanitized public content
-- MarginAI case study with architecture narrative, designed-vs-proposed visual distinction, OG PNG
-- All three projects published and clickable on homepage
+- Connect page with booking modal, vCard, CV, email, LinkedIn, GitHub, QR
+- ATLAS, Noesis, MarginAI case studies with JSON-LD and sanitized public content
+- Public booking and WhatsApp defaults (env-overridable)
+- Connect QR assets for Vercel production URL
 - SEO metadata, sitemap, robots, favicon
-- Content architecture (`content/` modules)
-- Multi-viewport screenshot QA (`.screenshots/`, local only — do not commit)
+- `.vercelignore` for safe CLI deployment
 - Build/lint/tsc pass
 
 ## Unfinished work
 
-- Deployment to production domain (Vercel)
-- WhatsApp + calendar URLs (`siteConfig` null)
+- Custom domain (`zaidduartee.com`) — not configured
+- Formspree endpoint for private note form
+- GitHub automatic Vercel deployment hookup
 - Project-specific README
 - Optional: automated tests
 - ATLAS / Noesis OG PNGs (MarginAI has `public/og/marginai-case-study.png`)
@@ -117,21 +133,22 @@ Private source (never commit):
 
 ## Local QA artifacts
 
-- **`.screenshots/`** — Multi-viewport capture evidence from manual QA. Kept locally for regression comparison. **Must not be committed** (listed in `.gitignore`).
+- **`.screenshots/`** — Multi-viewport capture evidence from manual QA. Kept locally for regression comparison. **Must not be committed** (listed in `.gitignore` and `.vercelignore`).
 
 ## Decisions still required
 
-- WhatsApp + calendar URLs
-- Deployment target confirmation
+- Custom domain DNS
+- Formspree endpoint
+- GitHub → Vercel auto-deploy connection
 - Testimonial attribution policy
 - Analytics tooling (if any)
 
 ## Prioritized next steps
 
-1. Deploy to `zaidduartee.com`
-2. Wire pending connect actions when URLs available
-3. Add OG PNGs for ATLAS and Noesis if desired
-4. Optional: automated visual regression tests
+1. Connect custom domain when ready
+2. Add Formspree endpoint and rebuild
+3. Enable GitHub automatic Vercel deployments (optional)
+4. Add OG PNGs for ATLAS and Noesis if desired
 
 ## Rules for future AI agents
 
@@ -145,6 +162,6 @@ Private source (never commit):
 8. **Run `npm run lint`, `tsc`, `build`** before claiming done
 9. **Don't invent metrics, clients, or testimonials**
 10. **Don't commit `.screenshots/`** — local QA evidence only
-11. **Ask before removing “Pending” connect rows or changing `siteConfig` contact info**
-12. **Never overwrite or revert existing uncommitted user work** — treat all local changes as authoritative; preserve, extend, or ask before replacing
-13. **MarginAI evidence rule** — see evidence boundary above; use “modeled cost impact” not “achieved savings”
+11. **Ask before removing connect integrations or changing `siteConfig` contact info**
+12. **Never overwrite or revert existing uncommitted user work**
+13. **MarginAI evidence rule** — see evidence boundary above

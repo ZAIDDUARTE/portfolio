@@ -195,7 +195,7 @@ export function ConnectQrSection() {
             Download SVG
           </a>
           <p className="text-xs leading-relaxed text-muted">
-            Permanent destination: /connect
+            Permanent destination: {connectAssets.qrTarget}
           </p>
         </div>
       </div>

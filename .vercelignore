@@ -1,0 +1,12 @@
+.screenshots/
+content/case-study-source/
+.env
+.env.*
+!.env.example
+.next/
+node_modules/
+.vercel/
+build/
+coverage/
+*.tsbuildinfo
+.DS_Store

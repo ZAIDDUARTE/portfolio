@@ -8,7 +8,7 @@ export const siteConfig = {
   title: "Zaid Duartee — CTO & Technical Lead",
   description:
     "Technical leader working across product, engineering, data systems, geospatial intelligence, SaaS and AI infrastructure.",
-  url: "https://zaidduartee.com",
+  url: "https://zaid-portfolio-dusky.vercel.app",
   email: "zaidduartee@gmail.com",
   linkedin: "https://www.linkedin.com/in/zaidduartee",
   github: "https://github.com/ZAIDDUARTE",
@@ -35,6 +35,10 @@ export const siteConfig = {
   /** Formspree (or compatible) endpoint — set via NEXT_PUBLIC_FEEDBACK_FORM_ENDPOINT */
   feedbackFormEndpoint: emptyToNull(process.env.NEXT_PUBLIC_FEEDBACK_FORM_ENDPOINT),
 } as const;
+
+export function siteHostname(): string {
+  return new URL(siteConfig.url).hostname;
+}
 
 export function isConfiguredUrl(value: string | null): value is string {
   if (!value) return false;

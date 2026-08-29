@@ -14,10 +14,10 @@ export type ConnectAction = {
 };
 
 export const connectAssets = {
-  /** Set when production QR assets exist for the live /connect URL. */
-  qrPng: null as string | null,
-  qrSvg: null as string | null,
-  qrAlt: "QR code for the Connect page",
+  qrPng: "/contact/connect-qr.png",
+  qrSvg: "/contact/connect-qr.svg",
+  qrTarget: `${siteConfig.url}/connect`,
+  qrAlt: `QR code linking to ${siteConfig.url}/connect`,
   og: "/og/connect.png",
   ogWidth: 1200,
   ogHeight: 630,
