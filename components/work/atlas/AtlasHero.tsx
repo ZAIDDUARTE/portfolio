@@ -97,10 +97,6 @@ export function AtlasHero() {
               <dt>Domain /</dt>
               <dd className="text-light/85">{atlasMeta.domain}</dd>
             </div>
-            <div className="flex gap-2">
-              <dt>Status /</dt>
-              <dd className="text-light/85">{atlasMeta.status}</dd>
-            </div>
           </dl>
         </div>
 

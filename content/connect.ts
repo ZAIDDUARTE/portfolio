@@ -53,15 +53,12 @@ export const noteContextOptions = [
 
 export type NoteContext = (typeof noteContextOptions)[number];
 
-export const connectCaseStudies = projects
-  .filter((project) => project.availability === "published")
-  .map((project) => ({
-    id: project.id,
-    title: project.title,
-    href: project.href,
-    status: project.status,
-    caseNumber: project.caseNumber,
-  }));
+export const connectCaseStudies = projects.map((project) => ({
+  id: project.id,
+  title: project.title,
+  href: project.href,
+  caseNumber: project.caseNumber,
+}));
 
 export const connectSecondaryActions: ConnectAction[] = [
   {

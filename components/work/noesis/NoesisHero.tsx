@@ -72,10 +72,6 @@ export function NoesisHero() {
               <dt>Domain /</dt>
               <dd className="text-ink/85">{noesisMeta.domain}</dd>
             </div>
-            <div className="flex gap-2">
-              <dt>Status /</dt>
-              <dd className="text-ink/85">{noesisMeta.status}</dd>
-            </div>
           </dl>
 
           <p className="hero-rise hero-rise-delay-5 mt-8 max-w-2xl border-l-2 border-accent/60 pl-4 text-sm leading-relaxed text-muted">

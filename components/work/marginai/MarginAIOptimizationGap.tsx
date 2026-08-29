@@ -24,7 +24,7 @@ export function MarginAIOptimizationGap() {
 
         <p className="mt-8 max-w-3xl text-base leading-[1.7] text-muted md:text-lg">
           Cost visibility alone does not eliminate inefficiency. MarginAI
-          separates visibility, recommendation, designed automated
+          separates visibility, recommendation, automated
           decision-making, execution, and verification — with automation applied
           only where safety thresholds are met.
         </p>

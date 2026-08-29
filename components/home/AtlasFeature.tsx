@@ -34,7 +34,6 @@ export function AtlasFeature() {
             { label: "Case", value: atlasProject.caseNumber },
             { label: "Role", value: atlasProject.role },
             { label: "Domain", value: atlasProject.domain },
-            { label: "Status", value: atlasProject.status },
           ]}
         />
 

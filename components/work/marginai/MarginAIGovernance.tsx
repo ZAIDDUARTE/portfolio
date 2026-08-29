@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/ui/Reveal";
 import {
-  marginaiCommercialNote,
   marginaiExcludedFromMvp,
   marginaiGovernancePrinciples,
 } from "@/content/marginai";
@@ -53,16 +52,7 @@ export function MarginAIGovernance() {
           </ul>
         </div>
 
-        <div className="mt-14 border border-dashed border-border bg-border-subtle p-6 md:p-8">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
-            Proposed commercial model
-          </p>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
-            {marginaiCommercialNote}
-          </p>
-        </div>
-
-        <div className="mt-8 border border-border bg-border-subtle p-6 md:p-8">
+        <div className="mt-14 border border-border bg-border-subtle p-6 md:p-8">
           <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
             Explicitly excluded from MVP
           </p>

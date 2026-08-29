@@ -2,23 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useState, type ReactNode } from "react";
+import { useCallback, useState } from "react";
 import { SectionLabel } from "@/components/layout/SectionLabel";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 import { projects, type Project } from "@/content/projects";
-
-function isProjectPublished(project: Project): boolean {
-  return project.availability === "published";
-}
-
-function ComingSoonLabel() {
-  return (
-    <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-muted">
-      Coming Soon
-    </span>
-  );
-}
 
 function ProjectPreview({
   project,
@@ -27,15 +15,13 @@ function ProjectPreview({
   project: Project;
   isActive: boolean;
 }) {
-  const published = isProjectPublished(project);
-
   return (
     <div
       className={`absolute inset-0 transition-opacity duration-300 ease-out ${
         isActive ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
       aria-hidden={!isActive}
-      {...(published ? { "data-cursor": "explore" } : {})}
+      data-cursor="explore"
     >
       <div
         className={`relative h-full w-full overflow-hidden ${project.world.frameClass}`}
@@ -64,20 +50,15 @@ function ProjectCardDetails({
   project: Project;
   isActive: boolean;
 }) {
-  const published = isProjectPublished(project);
-
   return (
     <>
       <div className="flex items-baseline justify-between gap-4">
         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
           {project.index}
         </p>
-        <div className="flex items-baseline gap-3">
-          {!published ? <ComingSoonLabel /> : null}
-          <p className="text-[10px] uppercase tracking-[0.16em] text-muted">
-            Case / {project.caseNumber}
-          </p>
-        </div>
+        <p className="text-[10px] uppercase tracking-[0.16em] text-muted">
+          Case / {project.caseNumber}
+        </p>
       </div>
 
       <h3
@@ -90,11 +71,8 @@ function ProjectCardDetails({
         {project.title}
       </h3>
 
-      <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm uppercase tracking-[0.12em] text-muted">
-        <span>{project.subtitle}</span>
-        <span className="border border-border px-2 py-0.5 text-[9px] tracking-[0.14em]">
-          {project.status}
-        </span>
+      <p className="mt-3 text-sm uppercase tracking-[0.12em] text-muted">
+        {project.subtitle}
       </p>
 
       {isActive ? (
@@ -113,20 +91,11 @@ function ProjectCardDetails({
               <li key={domain}>{domain}</li>
             ))}
           </ul>
-          {published ? (
-            <Magnetic maxOffset={5}>
-              <span className="mt-6 inline-flex items-center text-sm font-medium text-accent">
-                Explore {project.title} ↗
-              </span>
-            </Magnetic>
-          ) : (
-            <p
-              className="mt-6 text-sm leading-relaxed text-muted"
-              aria-label={`${project.title} case study coming soon`}
-            >
-              Case study in preparation.
-            </p>
-          )}
+          <Magnetic maxOffset={5}>
+            <span className="mt-6 inline-flex items-center text-sm font-medium text-accent">
+              Explore {project.title} ↗
+            </span>
+          </Magnetic>
         </div>
       ) : null}
     </>
@@ -142,41 +111,6 @@ function DesktopProjectCard({
   isActive: boolean;
   onActivate: (id: string) => void;
 }) {
-  const published = isProjectPublished(project);
-  const cardClassName = "group block";
-
-  const cardContent = (
-    <ProjectCardDetails project={project} isActive={isActive} />
-  );
-
-  let interactiveCard: ReactNode;
-
-  if (published) {
-    interactiveCard = (
-      <Link
-        href={project.href}
-        data-cursor="view"
-        data-cursor-label={`VIEW ${project.index}`}
-        className={cardClassName}
-        onFocus={() => onActivate(project.id)}
-      >
-        {cardContent}
-      </Link>
-    );
-  } else {
-    interactiveCard = (
-      <div
-        role="group"
-        tabIndex={0}
-        aria-label={`${project.title}: ${project.subtitle}. Case study coming soon.`}
-        className={cardClassName}
-        onFocus={() => onActivate(project.id)}
-      >
-        {cardContent}
-      </div>
-    );
-  }
-
   return (
     <article
       className={`border-t border-border py-10 transition-opacity duration-200 ease-out first:border-t-0 first:pt-0 ${
@@ -184,26 +118,29 @@ function DesktopProjectCard({
       }`}
       onMouseEnter={() => onActivate(project.id)}
     >
-      {interactiveCard}
+      <Link
+        href={project.href}
+        data-cursor="view"
+        data-cursor-label={`VIEW ${project.index}`}
+        className="group block"
+        onFocus={() => onActivate(project.id)}
+      >
+        <ProjectCardDetails project={project} isActive={isActive} />
+      </Link>
     </article>
   );
 }
 
 function MobileProjectCard({ project }: { project: Project }) {
-  const published = isProjectPublished(project);
-
   return (
     <article className="project-tap border-t border-border py-10 first:border-t-0 first:pt-0">
       <div className="flex items-baseline justify-between gap-4">
         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
           {project.index}
         </p>
-        <div className="flex items-baseline gap-3">
-          {!published ? <ComingSoonLabel /> : null}
-          <p className="text-[10px] uppercase tracking-[0.16em] text-muted">
-            Case / {project.caseNumber}
-          </p>
-        </div>
+        <p className="text-[10px] uppercase tracking-[0.16em] text-muted">
+          Case / {project.caseNumber}
+        </p>
       </div>
       <h3 className="mt-3 text-[clamp(2rem,8vw,3.25rem)] font-medium leading-none tracking-[-0.02em]">
         {project.title}
@@ -226,21 +163,12 @@ function MobileProjectCard({ project }: { project: Project }) {
         />
       </div>
 
-      {published ? (
-        <Link
-          href={project.href}
-          className="tap-active mt-6 inline-flex min-h-12 items-center text-base font-medium text-accent link-underline active:translate-x-0.5"
-        >
-          Explore {project.title} ↗
-        </Link>
-      ) : (
-        <p
-          className="mt-6 flex min-h-12 items-center"
-          aria-label={`${project.title} case study coming soon`}
-        >
-          <ComingSoonLabel />
-        </p>
-      )}
+      <Link
+        href={project.href}
+        className="tap-active mt-6 inline-flex min-h-12 items-center text-base font-medium text-accent link-underline active:translate-x-0.5"
+      >
+        Explore {project.title} ↗
+      </Link>
     </article>
   );
 }
@@ -268,7 +196,6 @@ export function SelectedWork() {
           Selected Systems
         </h2>
 
-        {/* Desktop: editorial index with a single large preview environment */}
         <div className="mt-12 hidden lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24">
           <div className="flex flex-col">
             {projects.map((project) => (
@@ -288,7 +215,6 @@ export function SelectedWork() {
           >
             <p className="sr-only">
               Previewing {activeProject.title}: {activeProject.subtitle}
-              {!isProjectPublished(activeProject) ? " — coming soon" : ""}
             </p>
             {projects.map((project) => (
               <ProjectPreview
@@ -300,7 +226,6 @@ export function SelectedWork() {
           </div>
         </div>
 
-        {/* Mobile: single column, no hover dependency */}
         <div className="mt-10 lg:hidden">
           {projects.map((project) => (
             <MobileProjectCard key={project.id} project={project} />

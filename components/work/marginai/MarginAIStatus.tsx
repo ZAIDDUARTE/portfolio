@@ -1,19 +1,5 @@
 import { Reveal } from "@/components/ui/Reveal";
-import { marginaiStatusRows, type MarginAIStatusTone } from "@/content/marginai";
-
-const toneClass: Record<MarginAIStatusTone, string> = {
-  designed: "text-light",
-  proposed: "text-light/85",
-  excluded: "text-light/70",
-  "not-evidenced": "text-light/70",
-};
-
-const toneBadge: Record<MarginAIStatusTone, string> = {
-  designed: "border-accent/40 text-accent",
-  proposed: "border-light/30 text-light/70",
-  excluded: "border-light/20 text-light/55",
-  "not-evidenced": "border-light/20 text-light/55",
-};
+import { marginaiMeta, marginaiTechnicalDelivery } from "@/content/marginai";
 
 export function MarginAIStatus() {
   return (
@@ -24,36 +10,33 @@ export function MarginAIStatus() {
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-light/55">
-          14 / Status
+          14 / Technical Delivery
         </p>
 
         <h2
           id="status-heading"
           className="mt-8 max-w-3xl text-[clamp(2rem,5vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.03em]"
         >
-          Designed architecture —
+          Implemented system —
           <br />
-          unverified outcomes.
+          scoped and defensible.
         </h2>
 
+        <p className="mt-6 max-w-2xl border-l-2 border-accent/70 pl-4 text-sm leading-relaxed text-light/75">
+          {marginaiMeta.scopeNote}
+        </p>
+
         <ul className="mt-14 space-y-0 border-t border-light/15 md:mt-16">
-          {marginaiStatusRows.map((row) => (
+          {marginaiTechnicalDelivery.map((row) => (
             <li
-              key={row.workstream}
-              className="grid gap-3 border-b border-light/15 py-6 md:grid-cols-[minmax(12rem,1.2fr)_minmax(9rem,0.7fr)_1.4fr] md:items-baseline md:gap-8 md:py-7"
+              key={row.capability}
+              className="grid gap-3 border-b border-light/15 py-6 md:grid-cols-[minmax(12rem,1fr)_1.6fr] md:items-baseline md:gap-8 md:py-7"
             >
-              <p className={`text-base font-medium ${toneClass[row.tone]}`}>
-                {row.workstream}
-              </p>
-              <p>
-                <span
-                  className={`inline-block border px-3 py-1 text-[10px] uppercase tracking-[0.14em] ${toneBadge[row.tone]}`}
-                >
-                  {row.status}
-                </span>
+              <p className="text-base font-medium text-light">
+                {row.capability}
               </p>
               <p className="text-sm leading-relaxed text-light/65 md:text-base">
-                {row.claim}
+                {row.detail}
               </p>
             </li>
           ))}

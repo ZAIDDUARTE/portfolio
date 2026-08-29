@@ -10,8 +10,6 @@ export type ProjectWorld = {
   dark: boolean;
 };
 
-export type ProjectAvailability = "published" | "coming-soon";
-
 export type Project = {
   id: string;
   index: string;
@@ -20,12 +18,9 @@ export type Project = {
   subtitle: string;
   role: string;
   domain: string;
-  status: string;
-  availability: ProjectAvailability;
   domains: string[];
   hook: string;
   href: string;
-  /** TODO: REPLACE WITH VERIFIED PROJECT ASSET */
   image: string;
   imageAlt: string;
   imageWidth: number;
@@ -43,8 +38,6 @@ export const projects: Project[] = [
     subtitle: "Environmental Risk Intelligence",
     role: "Technical Lead",
     domain: "Geospatial & Risk Intelligence",
-    status: "Active Validation",
-    availability: "published",
     domains: [
       "Geospatial Systems",
       "Risk Intelligence",
@@ -52,7 +45,7 @@ export const projects: Project[] = [
       "Insurance",
       "Data Infrastructure",
     ],
-    hook: "How do you turn fragmented environmental and geospatial evidence into risk intelligence that can survive real validation?",
+    hook: "How can governed environmental and geospatial evidence become reproducible risk intelligence across operational contexts?",
     href: "/work/atlas",
     image: "/images/atlas/preview.svg",
     imageAlt: "ATLAS environmental risk intelligence system preview",
@@ -69,15 +62,13 @@ export const projects: Project[] = [
     subtitle: "Environmental Health Intelligence",
     role: "Lead Developer / AI & Geospatial Data Engineer",
     domain: "Geospatial & Environmental Intelligence",
-    status: "Engineering Foundation",
-    availability: "published",
     domains: [
       "Geospatial Data",
       "Environmental Systems",
       "Time Series",
       "Healthcare Context",
     ],
-    hook: "How do you make environmental context traceable enough to interpret operational healthcare demand — without confusing association with diagnosis?",
+    hook: "How can environmental, temporal and geographic signals become traceable healthcare-demand context without implying diagnosis?",
     href: "/work/noesis",
     image: "/images/noesis/noesis-preview.webp",
     imageAlt: "Noesis environmental health intelligence — atmospheric context preview",
@@ -90,18 +81,16 @@ export const projects: Project[] = [
     index: "03",
     caseNumber: "003",
     title: "MarginAI",
-    subtitle: "Inference Optimization — Architecture",
+    subtitle: "Inference Optimization Infrastructure",
     role: "CTO & Technical Lead",
     domain: "AI Infrastructure",
-    status: "Product Architecture & MVP Design",
-    availability: "published",
     domains: [
       "AI Infrastructure",
-      "Product Architecture",
       "API Systems",
       "Inference Economics",
+      "SaaS Infrastructure",
     ],
-    hook: "How do you design an inference proxy that refuses to optimize unless correctness is defensible?",
+    hook: "How can an inference proxy reduce avoidable processing while preserving correctness whenever optimization confidence is insufficient?",
     href: "/work/marginai",
     image: "/images/marginai/marginai-preview.svg",
     imageAlt: "MarginAI inference proxy optimization flow diagram",

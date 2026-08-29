@@ -1,17 +1,5 @@
 import { Reveal } from "@/components/ui/Reveal";
-import {
-  marginaiContributions,
-  marginaiMeta,
-  marginaiRoleColumns,
-  type MarginAIStatusTone,
-} from "@/content/marginai";
-
-const toneBadge: Record<MarginAIStatusTone, string> = {
-  designed: "border-accent/40 text-accent",
-  proposed: "border-light/25 text-light/55",
-  excluded: "border-light/20 text-light/45",
-  "not-evidenced": "border-light/20 text-light/45",
-};
+import { marginaiMeta, marginaiRoleColumns } from "@/content/marginai";
 
 export function MarginAIRole() {
   return (
@@ -31,7 +19,7 @@ export function MarginAIRole() {
         >
           {marginaiMeta.role} —
           <br />
-          architecture to economics.
+          system delivery end to end.
         </h2>
 
         <div className="mt-14 grid gap-10 md:mt-16 md:grid-cols-3">
@@ -46,24 +34,6 @@ export function MarginAIRole() {
             </div>
           ))}
         </div>
-
-        <ul className="mt-14 space-y-4 border-t border-light/15 pt-10 md:mt-16">
-          {marginaiContributions.map((item) => (
-            <li
-              key={item.body}
-              className="grid gap-3 border-b border-light/10 pb-4 md:grid-cols-[auto_1fr] md:items-start md:gap-6"
-            >
-              <span
-                className={`inline-block w-fit border px-2 py-0.5 text-[9px] uppercase tracking-[0.14em] ${toneBadge[item.tone]}`}
-              >
-                {item.tone === "designed" ? "Designed" : "Proposed"}
-              </span>
-              <span className="text-base leading-relaxed text-light/80">
-                {item.body}
-              </span>
-            </li>
-          ))}
-        </ul>
       </Reveal>
     </section>
   );

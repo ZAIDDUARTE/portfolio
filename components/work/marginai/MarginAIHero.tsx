@@ -39,13 +39,6 @@ export function MarginAIHero() {
             Case Study {marginaiMeta.caseNumber} — {marginaiMeta.subtitle}
           </p>
 
-          <p
-            className="hero-rise hero-rise-delay-1 mt-5 inline-block border border-accent/50 bg-accent/10 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-accent"
-            role="status"
-          >
-            {marginaiMeta.status}
-          </p>
-
           <h1
             id="marginai-case-heading"
             className="hero-rise hero-rise-delay-1 mt-5 text-[clamp(3.5rem,12vw,8rem)] font-medium leading-[0.9] tracking-[-0.04em]"
@@ -63,10 +56,6 @@ export function MarginAIHero() {
             {marginaiMeta.statement}
           </p>
 
-          <p className="hero-rise hero-rise-delay-4 mt-6 max-w-xl border-l-2 border-accent/70 pl-4 text-sm font-medium leading-relaxed text-light/80">
-            {marginaiMeta.evidenceNotice}
-          </p>
-
           <dl className="hero-rise hero-rise-delay-4 mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[10px] uppercase tracking-[0.16em] text-light/50">
             <div className="flex gap-2">
               <dt>Role /</dt>
@@ -79,7 +68,7 @@ export function MarginAIHero() {
           </dl>
 
           <p className="hero-rise hero-rise-delay-5 mt-6 max-w-2xl text-sm leading-relaxed text-light/55">
-            {marginaiMeta.disclaimer}
+            {marginaiMeta.scopeNote}
           </p>
         </div>
 

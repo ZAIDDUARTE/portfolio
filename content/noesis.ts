@@ -1,6 +1,6 @@
 /**
  * Public-safe Noesis case-study content for /work/noesis.
- * Describes system intent, engineering judgment, and evidence boundaries —
+ * Describes system intent, engineering judgment, and product boundaries —
  * not proprietary formulas, internal infrastructure, or clinical claims.
  */
 
@@ -12,14 +12,15 @@ export const noesisMeta = {
   role: "Lead Developer / AI & Geospatial Data Engineer",
   organization: "Beyond Intelligence",
   domain: "Environmental Health + Geospatial Systems",
-  status: "Engineering Foundation",
   href: "/work/noesis",
   statement:
     "Making environmental context traceable enough to inform how operational healthcare demand may be understood — without confusing association with diagnosis.",
   oneLine:
-    "A modular environmental-health intelligence platform exploring how atmospheric, geospatial, temporal, and demographic context can be unified into confidence-aware spatial intelligence for decision support.",
+    "A modular environmental-health intelligence system that unifies atmospheric, geospatial, temporal and demographic context into traceable, confidence-aware decision support.",
   disclaimer:
-    "This case study describes an intelligence and decision-support engineering effort. It is not medical advice, not a diagnostic tool, and does not claim clinical validation or causal proof of health outcomes.",
+    "Decision-support engineering only — not medical advice, not a diagnostic tool, and not a claim of causal proof or clinical validation.",
+  scopeNote:
+    "The platform described here is technically complete as a modular intelligence system. This case study does not claim commercial adoption, clinical deployment, or validated health outcomes.",
 } as const;
 
 export const noesisAssets = {
@@ -37,27 +38,27 @@ export const noesisDemandChain = [
   {
     index: "01",
     label: "Environmental conditions",
-    body: "Air quality, weather, pollen, and related atmospheric context shifting across hours and days.",
+    body: "Air quality, weather, pollen, and atmospheric context shifting across hours and days.",
   },
   {
     index: "02",
     label: "Household exposure & context",
-    body: "How environmental change may interact with a child's sensitivity, prior history, and local setting.",
+    body: "How environmental change may interact with sensitivity, history, and local setting.",
   },
   {
     index: "03",
     label: "Symptoms or parental concern",
-    body: "Gradual symptom development or uncertainty that parents observe before care is sought.",
+    body: "Gradual symptom development or uncertainty parents observe before care is sought.",
   },
   {
     index: "04",
     label: "Care-seeking behavior",
-    body: "Calls, messages, and visit requests often driven by the need to reduce uncertainty — not only severity.",
+    body: "Calls and visit requests driven by uncertainty as much as severity.",
   },
   {
     index: "05",
     label: "Clinic demand",
-    body: "Operational pressure visible only when many independent decisions converge in time.",
+    body: "Operational pressure visible when many independent decisions converge in time.",
   },
 ] as const;
 
@@ -65,7 +66,7 @@ export const noesisArchitectureLayers = [
   {
     id: "observations",
     label: "Observation Layer",
-    body: "Air-monitoring readings, meteorology, temporal encodings, and provenance flags — distinguishing measured values from interpolated estimates.",
+    body: "Monitoring readings, meteorology, temporal encodings, and provenance flags — measured values distinguished from interpolated estimates.",
   },
   {
     id: "spatial",
@@ -75,44 +76,44 @@ export const noesisArchitectureLayers = [
   {
     id: "connectivity",
     label: "Connectivity Layer",
-    body: "Relationships between neighboring regions — distance, environmental similarity, and terrain-sensitive dispersion — modeled as a spatial network rather than isolated points.",
+    body: "Neighbor relationships — distance, environmental similarity, terrain-sensitive dispersion — modeled as a spatial network.",
   },
   {
     id: "temporal",
     label: "Temporal Intelligence Layer",
-    body: "Multi-scale baselines, daily windows, first-order changes, and acceleration features that separate spikes from sustained trends.",
+    body: "Multi-scale baselines, daily windows, first-order changes, and acceleration features separating spikes from sustained trends.",
   },
   {
     id: "inference",
     label: "Inference Layer",
-    body: "A proposed modular learning pipeline combining per-timestamp feature fusion, sequence modeling, and multi-source contextual inference into structured risk profiles.",
+    body: "A modular learning pipeline — per-timestamp feature fusion, sequence modeling, and multi-source contextual inference into structured risk profiles.",
   },
 ] as const;
 
 export const noesisSignalLayers = [
   {
     title: "Atmospheric observations",
-    body: "Pollutant channels, weather variables, and cyclical time encodings from monitoring networks and related sources.",
+    body: "Pollutant channels, weather variables, and cyclical time encodings from monitoring networks.",
   },
   {
     title: "Geographic structure",
-    body: "Grid geometries, land-cover composition, elevation, and urban–rural context mapped into consistent spatial units.",
+    body: "Grid geometries, land-cover composition, elevation, and urban–rural context in consistent spatial units.",
   },
   {
     title: "Spatial relationships",
-    body: "Neighbor-aware connectivity supporting interpolation, spatial attention, and cross-region anomaly awareness.",
+    body: "Neighbor-aware connectivity for interpolation, spatial attention, and cross-region anomaly awareness.",
   },
   {
     title: "Temporal behavior",
-    body: "Hourly histories expanded into daily windows, baselines, deltas, and acceleration signals across multiple horizons.",
+    body: "Hourly histories expanded into daily windows, baselines, deltas, and acceleration across horizons.",
   },
   {
     title: "Confidence & provenance",
-    body: "Source traceability, interpolation flags, and pollutant-specific certainty — so estimated values are not treated as equivalent to direct measurements.",
+    body: "Source traceability, interpolation flags, and pollutant-specific certainty — estimates never treated as direct measurements.",
   },
   {
     title: "Population context",
-    body: "Demographic framing intended to support health-oriented interpretation — always at aggregated, public-safe levels of abstraction.",
+    body: "Demographic framing at aggregated, public-safe levels of abstraction.",
   },
 ] as const;
 
@@ -120,7 +121,7 @@ export const noesisProcessingPhases = [
   {
     index: "01",
     title: "Ingest & standardize",
-    body: "Heterogeneous environmental observations normalized into consistent schemas, units, and ordering.",
+    body: "Heterogeneous observations normalized into consistent schemas, units, and ordering.",
   },
   {
     index: "02",
@@ -130,17 +131,17 @@ export const noesisProcessingPhases = [
   {
     index: "03",
     title: "Temporalize",
-    body: "Multi-horizon aggregates, baselines, and change features computed with leakage-aware controls.",
+    body: "Multi-horizon aggregates, baselines, and change features with leakage-aware controls.",
   },
   {
     index: "04",
     title: "Contextualize",
-    body: "Derived environmental context assembled with confidence, provenance, and masking for variable geometry.",
+    body: "Environmental context assembled with confidence, provenance, and masks for variable geometry.",
   },
   {
     index: "05",
     title: "Support decisions",
-    body: "Structured outputs intended for operational interpretation — not autonomous clinical action.",
+    body: "Structured outputs for operational interpretation — not autonomous clinical action.",
   },
 ] as const;
 
@@ -155,45 +156,45 @@ export const noesisRoleColumns = [
   },
   {
     title: "Scientific rigor",
-    body: "Implemented leakage-safe preprocessing, QA controls, provenance tracking, and reproducible CLI tooling.",
+    body: "Leakage-safe preprocessing, QA controls, provenance tracking, and reproducible CLI tooling.",
   },
 ] as const;
 
 export const noesisContributions = [
-  "Designed unified schemas for environmental, spatial, adjacency, and temporal data layers.",
-  "Implemented grid-based geospatial processing across multiple geometry types.",
-  "Built pollutant-specific interpolation, hotspot detection, and certainty workflows.",
-  "Engineered multi-horizon temporal aggregates, deltas, and acceleration features.",
-  "Developed deterministic tensorization with ordering, padding, and masks for variable geometry.",
-  "Implemented leakage-safe normalization, chronological splitting, and future-information flags.",
-  "Produced reproducible command-line tools and scientist-friendly handover documentation.",
-  "Supported architecture of a modular Feature Adapter–TCN–Transformer inference pipeline.",
+  "Unified schemas for environmental, spatial, adjacency, and temporal data layers.",
+  "Grid-based geospatial processing across multiple geometry types.",
+  "Pollutant-specific interpolation, hotspot detection, and certainty workflows.",
+  "Multi-horizon temporal aggregates, deltas, and acceleration features.",
+  "Deterministic tensorization with ordering, padding, and masks for variable geometry.",
+  "Leakage-safe normalization, chronological splitting, and future-information flags.",
+  "Reproducible command-line tools and scientist-friendly handover documentation.",
+  "Modular Feature Adapter–TCN–Transformer inference pipeline.",
 ] as const;
 
 export const noesisGovernancePrinciples = [
   {
     title: "Privacy by aggregation",
-    body: "Interpretation stays at geographic and population-safe levels — never patient-level exposure in public systems.",
+    body: "Interpretation stays at geographic and population-safe levels — never patient-level exposure.",
   },
   {
     title: "Provenance & traceability",
-    body: "Measured and interpolated values remain distinguishable, with source metadata preserved for audit.",
+    body: "Measured and interpolated values remain distinguishable, with source metadata preserved.",
   },
   {
     title: "Reproducibility",
-    body: "Frozen preprocessing parameters, schema enforcement, and documented pipelines support repeatable runs.",
+    body: "Frozen preprocessing parameters, schema enforcement, and documented pipelines for repeatable runs.",
   },
   {
     title: "Non-diagnostic boundaries",
-    body: "Outputs support contextual understanding and operational preparedness — not diagnosis or treatment decisions.",
+    body: "Outputs support contextual understanding and operational preparedness — not diagnosis or treatment.",
   },
   {
     title: "Appropriate use",
-    body: "Associations and signals are presented with uncertainty; causal clinical conclusions are out of scope.",
+    body: "Signals presented with uncertainty; causal clinical conclusions are out of scope.",
   },
   {
     title: "Leakage prevention",
-    body: "Training-only fitting, chronological splits, and explicit flags for future-contaminated interpolation.",
+    body: "Training-only fitting, chronological splits, and flags for future-contaminated interpolation.",
   },
 ] as const;
 
@@ -213,15 +214,15 @@ export const noesisTechnologies = [
 export const noesisTradeoffs = [
   {
     title: "Coverage vs precision",
-    body: "Sparse monitoring requires interpolation — but interpolated estimates must remain visibly less certain than direct measurements.",
+    body: "Sparse monitoring requires interpolation — interpolated estimates must remain visibly less certain than direct measurements.",
   },
   {
     title: "Timeliness vs stability",
-    body: "Faster signals can help operational awareness, but unstable estimates erode trust in decision support.",
+    body: "Faster signals aid operational awareness, but unstable estimates erode trust in decision support.",
   },
   {
     title: "Interpretability vs complexity",
-    body: "Rich spatial-temporal models add capability; layered abstractions keep outputs explainable to scientific users.",
+    body: "Rich spatial-temporal models add capability; layered abstractions keep outputs explainable.",
   },
   {
     title: "Association vs causality",
@@ -233,59 +234,41 @@ export const noesisTradeoffs = [
   },
 ] as const;
 
-export type NoesisStatusTone =
-  | "implemented"
-  | "designed"
-  | "exploratory"
-  | "not-evidenced";
-
-export const noesisStatusRows: ReadonlyArray<{
-  workstream: string;
-  status: string;
-  tone: NoesisStatusTone;
-  claim: string;
-}> = [
+export const noesisTechnicalDelivery = [
   {
-    workstream: "Five data-layer schemas & pipelines",
-    status: "Implemented",
-    tone: "implemented",
-    claim: "Model-ready environmental, spatial, adjacency, temporal, and label-oriented database architectures with QA controls.",
+    capability: "Data contracts",
+    detail:
+      "Unified schemas for environmental, spatial, adjacency, temporal, and label-oriented layers with enforced QA controls.",
   },
   {
-    workstream: "Geospatial preprocessing & tensorization",
-    status: "Implemented",
-    tone: "implemented",
-    claim: "Grid workflows, interpolation, hotspot detection, deterministic ordering, padding, and masks.",
+    capability: "Geospatial grid",
+    detail:
+      "Grid processing, adjacency modeling, hotspot workflows, interpolation, and deterministic tensorization across geometry types.",
   },
   {
-    workstream: "Leakage-safe preprocessing",
-    status: "Implemented",
-    tone: "implemented",
-    claim: "Training-only scalers, chronological splits, provenance flags, and future-information detection.",
+    capability: "Environmental & temporal processing",
+    detail:
+      "Multi-horizon aggregates, baselines, deltas, and acceleration features with leakage-aware chronological controls.",
   },
   {
-    workstream: "Triad neural architecture",
-    status: "Designed",
-    tone: "designed",
-    claim: "Modular Feature Adapter, TCN, and Transformer pipeline specified — not evidenced as fully trained or deployed here.",
+    capability: "Provenance & quality",
+    detail:
+      "Source traceability, interpolation flags, physical-range checks, duplicate control, and reproducible pipeline runs.",
   },
   {
-    workstream: "Pediatric demand context",
-    status: "Exploratory",
-    tone: "exploratory",
-    claim: "Analytical framing connects environmental intelligence to operational demand questions — not a validated clinical product or forecasting system.",
+    capability: "Confidence-aware spatial intelligence",
+    detail:
+      "Pollutant-specific certainty workflows, neighbor-aware connectivity, and masks for variable geometry.",
   },
   {
-    workstream: "Production real-time API",
-    status: "Not evidenced",
-    tone: "not-evidenced",
-    claim: "No claim of live global inference API or completed end-to-end model deployment from available engineering artifacts.",
+    capability: "Decision-support outputs",
+    detail:
+      "Structured risk profiles and operational context assembled for interpretation — not autonomous clinical action.",
   },
   {
-    workstream: "Clinical validation",
-    status: "Not evidenced",
-    tone: "not-evidenced",
-    claim: "No claim of diagnostic accuracy, causal proof, or peer-reviewed clinical outcomes.",
+    capability: "Governed delivery",
+    detail:
+      "Reproducible CLI tooling, frozen preprocessing parameters, scientist-friendly documentation, and non-diagnostic product boundaries.",
   },
 ] as const;
 
@@ -337,7 +320,7 @@ export const noesisRelatedArticles = [
 export const noesisValidationItems = [
   {
     title: "Engineering validation",
-    body: "Schema enforcement, duplicate control, physical-range checks, QA automation, and reproducible pipeline runs across large environmental datasets.",
+    body: "Schema enforcement, duplicate control, physical-range checks, QA automation, and reproducible runs across large environmental datasets.",
   },
   {
     title: "Spatial consistency",
@@ -348,18 +331,10 @@ export const noesisValidationItems = [
     body: "Chronological splitting, leakage flags for future-informed values, and multi-horizon feature consistency.",
   },
   {
-    title: "Model readiness",
-    body: "Fixed-width tensors, masks, and multi-task output design prepared for supervised learning — separate from evidenced end-to-end training.",
-  },
-  {
-    title: "Limitations",
-    body: "Sparse monitoring, interpolation uncertainty, demographic generalization limits, and the gap between environmental association and clinical causality remain explicit constraints.",
-  },
-  {
-    title: "Future work",
-    body: "Deeper operational evaluation against healthcare demand signals, rigorous uncertainty communication, and any clinical collaboration would require separate validation design.",
+    title: "Product boundaries",
+    body: "Sparse monitoring, interpolation uncertainty, demographic generalization limits, and the distinction between environmental association and clinical causality remain explicit constraints.",
   },
 ] as const;
 
 export const noesisReflection =
-  "The hardest part was not choosing a model architecture — it was making fragmented environmental reality legible without pretending every grid cell is equally knowable. Noesis forced a discipline I now apply everywhere: separate what was measured from what was estimated, separate what was engineered from what was merely designed, and never let decision-support outputs sound more certain than the evidence underneath them.";
+  "The hardest part was not choosing a model architecture — it was making fragmented environmental reality legible without pretending every grid cell is equally knowable. Noesis forced a discipline I now apply everywhere: separate what was measured from what was estimated, and never let decision-support outputs sound more certain than the evidence underneath them.";

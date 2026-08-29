@@ -24,9 +24,8 @@ export function NoesisSignalLayers() {
 
         <p className="mt-8 max-w-3xl text-base leading-[1.7] text-muted md:text-lg">
           Noesis integrates environmental, spatial, temporal, and demographic
-          context only where engineering artifacts support those layers. Inputs
-          that were designed but not fully operationalized are not presented as
-          completed capabilities.
+          context into a single governed stack — with provenance and confidence
+          preserved at every layer.
         </p>
 
         <ul className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">

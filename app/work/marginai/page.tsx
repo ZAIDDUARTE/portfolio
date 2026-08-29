@@ -22,21 +22,21 @@ import { siteConfig } from "@/content/site";
 export const metadata: Metadata = {
   title: "MarginAI — LLM Inference Optimization",
   description:
-    "A technical case study on MarginAI: product architecture and MVP design for a safety-first, OpenAI-compatible inference proxy — with fail-open controls and no claimed production outcomes.",
+    "A technical case study on MarginAI: a completed OpenAI-compatible inference optimization system with fail-open controls — no customer adoption or cost outcomes claimed.",
   alternates: {
     canonical: "/work/marginai",
   },
   openGraph: {
     title: "MarginAI — LLM Inference Optimization | Zaid Duartee",
     description:
-      "Technical case study: OpenAI-compatible proxy architecture and MVP design — architecture only, no production validation or cost outcomes claimed.",
+      "Technical case study: OpenAI-compatible inference optimization with independent safety gates and fail-open request handling.",
     url: `${siteConfig.url}/work/marginai`,
     images: [
       {
         url: marginaiAssets.og,
         width: marginaiAssets.ogWidth,
         height: marginaiAssets.ogHeight,
-        alt: "MarginAI — LLM inference optimization architecture case study",
+        alt: "MarginAI — LLM inference optimization case study",
       },
     ],
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MarginAI — LLM Inference Optimization | Zaid Duartee",
     description:
-      "Technical case study on safety-first LLM inference optimization architecture and MVP design.",
+      "Technical case study on a completed OpenAI-compatible inference optimization system.",
     images: [marginaiAssets.og],
   },
 };

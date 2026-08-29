@@ -114,7 +114,7 @@ export function ConnectCaseStudyLinks() {
                 {study.title}
               </span>
               <span className="text-[10px] uppercase tracking-[0.14em] text-muted">
-                {study.status}
+                Case {study.caseNumber}
               </span>
             </Link>
           </li>
