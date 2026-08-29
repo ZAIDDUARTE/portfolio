@@ -1,23 +1,18 @@
-<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
   <rect width="1600" height="900" fill="#F3F1EC"/>
-
   <g stroke="#171717" stroke-opacity="0.12" stroke-width="1">
     <line x1="0" y1="300" x2="1600" y2="300"/>
     <line x1="0" y1="600" x2="1600" y2="600"/>
   </g>
-
   <g stroke="#171717" stroke-width="1">
     <line x1="120" y1="450" x2="1480" y2="450"/>
   </g>
-
   <g fill="#F3F1EC" stroke="#171717" stroke-width="1">
     <rect x="120" y="414" width="150" height="72"/>
     <rect x="470" y="414" width="150" height="72"/>
     <rect x="1330" y="414" width="150" height="72"/>
   </g>
-
   <rect x="820" y="414" width="150" height="72" fill="#F3F1EC" stroke="#2457FF" stroke-width="1.5"/>
-
   <g stroke="#171717" stroke-width="1" stroke-opacity="0.55">
     <path d="M620 450 L 720 450 L 720 300 L 820 300"/>
     <path d="M970 300 L 1070 300 L 1070 450 L 1330 450"/>
@@ -26,12 +21,10 @@
     <path d="M620 450 L 720 450 L 720 600 L 820 600"/>
     <path d="M970 600 L 1070 600 L 1070 450 L 1330 450"/>
   </g>
-
   <g fill="#F3F1EC" stroke="#171717" stroke-width="1">
     <rect x="820" y="264" width="150" height="72"/>
   </g>
   <rect x="820" y="564" width="150" height="72" fill="#F3F1EC" stroke="#2457FF" stroke-width="1.5"/>
-
   <g fill="#171717">
     <circle cx="270" cy="450" r="3"/>
     <circle cx="470" cy="450" r="3"/>
@@ -41,7 +34,6 @@
     <circle cx="895" cy="414" r="3"/>
     <circle cx="895" cy="636" r="3"/>
   </g>
-
   <g stroke="#171717" stroke-opacity="0.18" stroke-width="1">
     <line x1="720" y1="140" x2="720" y2="760"/>
     <line x1="1070" y1="140" x2="1070" y2="760"/>

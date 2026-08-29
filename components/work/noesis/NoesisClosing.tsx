@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
+import { marginaiProject } from "@/content/projects";
 import { noesisMeta } from "@/content/noesis";
 import { siteConfig } from "@/content/site";
 
@@ -32,16 +33,21 @@ export function NoesisClosing() {
             </p>
           </div>
 
-          <Link
-            href="/#work"
-            data-cursor="next"
-            data-cursor-label="NEXT"
-            className="text-[clamp(1.25rem,3vw,1.75rem)] font-medium tracking-[-0.02em] link-underline"
-          >
-            Back to Selected Systems
-            <br />
-            All Projects →
-          </Link>
+          <div>
+            <p className="mb-3 text-[10px] uppercase tracking-[0.16em] text-muted">
+              Case Study {marginaiProject.caseNumber}
+            </p>
+            <Link
+              href={marginaiProject.href}
+              data-cursor="next"
+              data-cursor-label="NEXT"
+              className="text-[clamp(1.25rem,3vw,1.75rem)] font-medium tracking-[-0.02em] link-underline"
+            >
+              Next System
+              <br />
+              {marginaiProject.title} →
+            </Link>
+          </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-8 md:mt-16 md:flex-row md:items-center md:justify-between">

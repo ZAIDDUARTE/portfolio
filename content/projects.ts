@@ -90,21 +90,21 @@ export const projects: Project[] = [
     index: "03",
     caseNumber: "003",
     title: "MarginAI",
-    subtitle: "LLM Infrastructure",
-    role: "CTO / Technical Lead",
+    subtitle: "Inference Optimization — Architecture",
+    role: "CTO & Technical Lead",
     domain: "AI Infrastructure",
-    status: "Product Architecture",
-    availability: "coming-soon",
+    status: "Product Architecture & MVP Design",
+    availability: "published",
     domains: [
       "AI Infrastructure",
-      "SaaS",
+      "Product Architecture",
       "API Systems",
       "Inference Economics",
     ],
-    hook: "What happens when optimizing an LLM request saves money but silently changes its behavior?",
+    hook: "How do you design an inference proxy that refuses to optimize unless correctness is defensible?",
     href: "/work/marginai",
-    image: "/images/marginai/preview.svg",
-    imageAlt: "MarginAI request architecture flow diagram",
+    image: "/images/marginai/marginai-preview.svg",
+    imageAlt: "MarginAI inference proxy optimization flow diagram",
     imageWidth: 1600,
     imageHeight: 900,
     world: { frameClass: "bg-canvas", dark: false },
@@ -113,6 +113,7 @@ export const projects: Project[] = [
 
 export const atlasProject = projects.find((p) => p.id === "atlas")!;
 export const noesisProject = projects.find((p) => p.id === "noesis")!;
+export const marginaiProject = projects.find((p) => p.id === "marginai")!;
 
 /** Abstract public labels on the ATLAS homepage visual — not a feature recipe. */
 export const atlasLayers = [
