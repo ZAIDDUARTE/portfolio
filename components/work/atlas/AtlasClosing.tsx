@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 import { atlasMeta } from "@/content/atlas";
+import { noesisProject } from "@/content/projects";
 import { siteConfig } from "@/content/site";
 
 export function AtlasClosing() {
@@ -25,16 +26,21 @@ export function AtlasClosing() {
             </p>
           </div>
 
-          <Link
-            href="/#work"
-            data-cursor="next"
-            data-cursor-label="NEXT"
-            className="text-[clamp(1.25rem,3vw,1.75rem)] font-medium tracking-[-0.02em] text-light link-underline decoration-light/30 hover:text-accent hover:decoration-accent"
-          >
-            Next System
-            <br />
-            MarginAI →
-          </Link>
+          <div>
+            <p className="mb-3 text-[10px] uppercase tracking-[0.16em] text-light/45">
+              Case Study {noesisProject.caseNumber}
+            </p>
+            <Link
+              href={noesisProject.href}
+              data-cursor="next"
+              data-cursor-label="NEXT"
+              className="text-[clamp(1.25rem,3vw,1.75rem)] font-medium tracking-[-0.02em] text-light link-underline decoration-light/30 hover:text-accent hover:decoration-accent"
+            >
+              Next System
+              <br />
+              {noesisProject.title} →
+            </Link>
+          </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-8 md:mt-16 md:flex-row md:items-center md:justify-between">

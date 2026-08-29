@@ -62,9 +62,33 @@ export const projects: Project[] = [
     dominant: true,
   },
   {
-    id: "marginai",
+    id: "noesis",
     index: "02",
     caseNumber: "002",
+    title: "Noesis",
+    subtitle: "Environmental Health Intelligence",
+    role: "Lead Developer / AI & Geospatial Data Engineer",
+    domain: "Geospatial & Environmental Intelligence",
+    status: "Engineering Foundation",
+    availability: "published",
+    domains: [
+      "Geospatial Data",
+      "Environmental Systems",
+      "Time Series",
+      "Healthcare Context",
+    ],
+    hook: "How do you make environmental context traceable enough to interpret operational healthcare demand — without confusing association with diagnosis?",
+    href: "/work/noesis",
+    image: "/images/noesis/noesis-preview.webp",
+    imageAlt: "Noesis environmental health intelligence — atmospheric context preview",
+    imageWidth: 1600,
+    imageHeight: 878,
+    world: { frameClass: "bg-border-subtle", dark: false },
+  },
+  {
+    id: "marginai",
+    index: "03",
+    caseNumber: "003",
     title: "MarginAI",
     subtitle: "LLM Infrastructure",
     role: "CTO / Technical Lead",
@@ -85,33 +109,10 @@ export const projects: Project[] = [
     imageHeight: 900,
     world: { frameClass: "bg-canvas", dark: false },
   },
-  {
-    id: "noesis",
-    index: "03",
-    caseNumber: "003",
-    title: "Noesis",
-    subtitle: "Environmental Health Intelligence",
-    role: "Technical Lead",
-    domain: "Geospatial & Environmental Intelligence",
-    status: "Engineering Foundation",
-    availability: "coming-soon",
-    domains: [
-      "Geospatial Data",
-      "Environmental Systems",
-      "Time Series",
-      "Predictive Infrastructure",
-    ],
-    hook: "How do you turn incomplete environmental observations into traceable, confidence-aware spatial intelligence?",
-    href: "/work/noesis",
-    image: "/images/noesis/preview.svg",
-    imageAlt: "Noesis environmental layers preview",
-    imageWidth: 1600,
-    imageHeight: 900,
-    world: { frameClass: "bg-border-subtle", dark: false },
-  },
 ];
 
-export const atlasProject = projects[0];
+export const atlasProject = projects.find((p) => p.id === "atlas")!;
+export const noesisProject = projects.find((p) => p.id === "noesis")!;
 
 /** Abstract public labels on the ATLAS homepage visual — not a feature recipe. */
 export const atlasLayers = [
