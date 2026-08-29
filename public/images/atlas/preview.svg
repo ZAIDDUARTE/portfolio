@@ -1,0 +1,52 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0F1114"/>
+  <defs>
+    <pattern id="atlasGrid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M100 0H0V100" stroke="#F6F6F2" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#atlasGrid)"/>
+
+  <g stroke="#F6F6F2" stroke-opacity="0.05" stroke-width="1">
+    <line x1="0" y1="230" x2="1600" y2="230"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="670" x2="1600" y2="670"/>
+  </g>
+
+  <g fill="none" stroke="#2457FF" transform="rotate(-14 540 430)">
+    <ellipse cx="540" cy="430" rx="42" ry="30" stroke-opacity="0.75"/>
+    <ellipse cx="540" cy="430" rx="82" ry="58" stroke-opacity="0.58"/>
+    <ellipse cx="540" cy="430" rx="126" ry="88" stroke-opacity="0.44"/>
+    <ellipse cx="540" cy="430" rx="176" ry="120" stroke-opacity="0.33"/>
+    <ellipse cx="540" cy="430" rx="232" ry="156" stroke-opacity="0.24"/>
+    <ellipse cx="540" cy="430" rx="294" ry="196" stroke-opacity="0.17"/>
+    <ellipse cx="540" cy="430" rx="362" ry="240" stroke-opacity="0.11"/>
+    <ellipse cx="540" cy="430" rx="436" ry="288" stroke-opacity="0.07"/>
+  </g>
+
+  <g fill="none" stroke="#2457FF" transform="rotate(22 1180 560)">
+    <ellipse cx="1180" cy="560" rx="34" ry="26" stroke-opacity="0.6"/>
+    <ellipse cx="1180" cy="560" rx="70" ry="52" stroke-opacity="0.44"/>
+    <ellipse cx="1180" cy="560" rx="112" ry="82" stroke-opacity="0.31"/>
+    <ellipse cx="1180" cy="560" rx="160" ry="116" stroke-opacity="0.21"/>
+    <ellipse cx="1180" cy="560" rx="214" ry="154" stroke-opacity="0.14"/>
+    <ellipse cx="1180" cy="560" rx="274" ry="196" stroke-opacity="0.09"/>
+  </g>
+
+  <path d="M0 640 C 180 600, 300 540, 460 470 S 760 340, 900 396 S 1180 520, 1330 470 S 1520 392, 1600 360"
+        stroke="#2457FF" stroke-opacity="0.85" stroke-width="1.5"/>
+  <path d="M0 720 C 200 700, 340 660, 520 596 S 820 470, 980 512 S 1240 620, 1400 580 S 1540 520, 1600 500"
+        stroke="#2457FF" stroke-opacity="0.35" stroke-width="1"/>
+
+  <g fill="#2457FF">
+    <circle cx="460" cy="470" r="3.5"/>
+    <circle cx="900" cy="396" r="3.5"/>
+    <circle cx="1330" cy="470" r="3.5"/>
+  </g>
+
+  <g stroke="#F6F6F2" stroke-opacity="0.12" stroke-width="1">
+    <line x1="460" y1="0" x2="460" y2="900"/>
+    <line x1="900" y1="0" x2="900" y2="900"/>
+    <line x1="1330" y1="0" x2="1330" y2="900"/>
+  </g>
+</svg>

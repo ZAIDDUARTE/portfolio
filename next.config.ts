@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Hides the on-screen dev route indicator. Compile/runtime errors still surface.
+  devIndicators: false,
 };
 
 export default nextConfig;

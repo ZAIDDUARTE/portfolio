@@ -1,26 +1,345 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: #f3f1ec;
+  --ink: #171717;
+  --accent: #2457ff;
+  --muted: #777777;
+  --dark: #15171a;
+  --light: #f6f6f2;
+  --border: #d8d6d0;
+  --border-subtle: #e8e6e0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: var(--canvas);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-dark: var(--dark);
+  --color-light: var(--light);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.section-pad {
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.section-y {
+  padding-block: clamp(4rem, 10vw, 7rem);
+}
+
+.editorial-rule {
+  border-top: 1px solid var(--border);
+}
+
+.link-underline {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ink) 30%, transparent);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 150ms ease, color 150ms ease;
+}
+
+.link-underline:hover,
+.link-underline:focus-visible {
+  text-decoration-color: var(--accent);
+  color: var(--accent);
+}
+
+.link-accent {
+  color: var(--accent);
+  transition: opacity 150ms ease;
+}
+
+.link-accent:hover,
+.link-accent:focus-visible {
+  opacity: 0.75;
+}
+
+/* Custom cursor — desktop fine pointer only */
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button {
+    cursor: none;
+  }
+}
+
+.custom-cursor {
+  display: none;
+}
+
+@media (pointer: fine) {
+  .custom-cursor {
+    display: block;
+  }
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring,
+.custom-cursor-expanded {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Hero entrance */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-rise-delay-1 {
+  animation-delay: 80ms;
+}
+
+.hero-rise-delay-2 {
+  animation-delay: 160ms;
+}
+
+.hero-rise-delay-3 {
+  animation-delay: 240ms;
+}
+
+.hero-rise-delay-4 {
+  animation-delay: 320ms;
+}
+
+.hero-rise-delay-5 {
+  animation-delay: 400ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Scroll reveals */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Expanding rules */
+.rule-expand {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rule-expand-visible {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rule-expand {
+    transform: scaleX(1);
+    transition: none;
+  }
+}
+
+/* Page transitions */
+@keyframes page-enter-keyframes {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.page-enter {
+  animation: page-enter-keyframes 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
+
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.project-rule-draw {
+  transform-origin: left center;
+  animation: rule-draw 600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-rule-draw {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+/* Editorial band reveal — major imagery only */
+.clip-reveal {
+  clip-path: inset(45% 0 45% 0);
+  transition: clip-path 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.clip-reveal-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clip-reveal {
+    clip-path: inset(0 0 0 0);
+    transition: none;
+  }
+}
+
+/* ATLAS visual — art-directed hairline sweep on pointer entry */
+.atlas-sweep {
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left center;
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 400ms ease;
+}
+
+@media (pointer: fine) {
+  .atlas-visual:hover .atlas-sweep {
+    transform: translateY(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-sweep {
+    transition: none;
+  }
+}
+
+/* Final contact — dark surface eases toward cobalt while the email is engaged */
+.contact-surface {
+  transition: background-color 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-surface:has(.contact-email:hover),
+.contact-surface:has(.contact-email:focus-visible) {
+  background-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-surface {
+    transition: none;
+  }
+}
+
+/* Navigation underline */
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  padding-block: 4px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 200ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link-active::after {
+  transform: scaleX(1);
+}
+
+/* ATLAS case study — hide autoplay video under reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .atlas-hero-video {
+    display: none !important;
+  }
+}
+
+/* Touch feedback */
+@media (pointer: coarse) {
+  .connect-row:active,
+  .tap-active:active {
+    background: var(--ink);
+    color: var(--light);
+  }
+
+  .project-tap:active {
+    opacity: 0.7;
+  }
+}
+
+

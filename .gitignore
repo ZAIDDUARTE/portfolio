@@ -20,9 +20,11 @@
 # production
 /build
 
-# misc
-.DS_Store
-*.pem
+# Private case-study source material — never ship under /public
+/content/case-study-source/
+
+# Local viewport QA captures — keep on disk, do not commit
+.screenshots/
 
 # debug
 npm-debug.log*
