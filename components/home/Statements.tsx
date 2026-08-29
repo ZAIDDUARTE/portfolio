@@ -52,9 +52,9 @@ export function ArchitectureStatement() {
           On architecture
         </h2>
         <p className="max-w-4xl font-serif text-[clamp(1.75rem,5vw,3.5rem)] leading-[1.12] tracking-[-0.02em] text-ink">
-          Architecture is only useful
+          Architecture earns trust
           <br />
-          when it survives production.
+          when its assumptions, constraints, and evidence are explicit.
         </p>
       </Reveal>
     </section>

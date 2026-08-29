@@ -1,22 +1,41 @@
 import type { Metadata } from "next";
 import {
-  ConnectActions,
-  ConnectFooter,
-  ConnectIdentity,
+  ConnectCaseStudyLinks,
+  ConnectConversationTopics,
+  ConnectHero,
   ConnectPortrait,
-} from "@/components/connect/ConnectContent";
+  ConnectPrimaryGrid,
+  ConnectQrSection,
+  ConnectSecondaryNav,
+} from "@/components/connect/ConnectHub";
+import { VisitorNoteForm } from "@/components/connect/VisitorNoteForm";
+import { connectAssets } from "@/content/connect";
 import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Connect",
+  title: siteConfig.connectTitle,
   description: siteConfig.connectDescription,
   alternates: {
     canonical: "/connect",
   },
   openGraph: {
-    title: `Connect — ${siteConfig.name}`,
+    title: siteConfig.connectTitle,
     description: siteConfig.connectDescription,
     url: `${siteConfig.url}/connect`,
+    images: [
+      {
+        url: connectAssets.og,
+        width: connectAssets.ogWidth,
+        height: connectAssets.ogHeight,
+        alt: "Connect with Zaid Duartee",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.connectTitle,
+    description: siteConfig.connectDescription,
+    images: [connectAssets.og],
   },
 };
 
@@ -24,26 +43,41 @@ export default function ConnectPage() {
   return (
     <main
       id="main-content"
-      className="section-pad mx-auto min-h-[calc(100svh-3.5rem)] max-w-[1400px] pb-12 pt-20 md:min-h-[calc(100svh-4rem)] md:pb-16 md:pt-24"
+      className="section-pad mx-auto min-h-[calc(100svh-3.5rem)] max-w-[1400px] pb-16 pt-20 md:min-h-[calc(100svh-4rem)] md:pb-24 md:pt-24"
     >
-      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,480px)] lg:items-start lg:gap-20 xl:grid-cols-[minmax(0,1.1fr)_minmax(360px,520px)] xl:gap-28">
+      <div className="xl:grid xl:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] xl:items-start xl:gap-20">
         <div className="flex items-start gap-10">
           <ConnectPortrait />
-          <ConnectIdentity />
+          <div className="min-w-0 flex-1">
+            <ConnectHero />
+            <div className="mt-10 md:mt-12">
+              <ConnectPrimaryGrid />
+            </div>
+            <ConnectConversationTopics />
+            <ConnectCaseStudyLinks />
+          </div>
         </div>
 
-        <div className="mt-6 lg:mt-0 lg:pt-2">
-          <ConnectActions />
-        </div>
+        <aside className="mt-12 xl:mt-0">
+          <ConnectSecondaryNav />
+          <ConnectQrSection />
+        </aside>
       </div>
 
-      <p className="mt-8 text-[10px] uppercase tracking-[0.18em] text-muted md:hidden">
-        {siteConfig.location.toUpperCase()}
-        <span className="mx-2 text-border">/</span>
-        {siteConfig.year}
-      </p>
+      <VisitorNoteForm />
 
-      <ConnectFooter />
+      <footer className="mt-16 border-t border-border pt-8 md:mt-24">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
+          {siteConfig.name.toUpperCase()} / {siteConfig.year}
+        </p>
+        <a
+          href={`mailto:${siteConfig.email}`}
+          data-cursor="talk"
+          className="mt-3 inline-block text-sm text-muted link-underline"
+        >
+          {siteConfig.email}
+        </a>
+      </footer>
     </main>
   );
 }

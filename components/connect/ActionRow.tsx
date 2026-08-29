@@ -7,6 +7,8 @@ type ActionRowProps = {
   download?: boolean;
   primary?: boolean;
   cursor?: string;
+  className?: string;
+  variant?: "card" | "list";
 };
 
 export function ActionRow({
@@ -16,16 +18,23 @@ export function ActionRow({
   download = false,
   primary = false,
   cursor,
+  className = "",
+  variant = "card",
 }: ActionRowProps) {
+  const surfaceClass =
+    variant === "list"
+      ? "border-t border-border py-4 md:py-5"
+      : "border border-border px-4 py-4 md:py-5";
+
   const row = (
     <a
       href={href}
       data-cursor={cursor}
-      className={`connect-row group flex min-h-[3.25rem] items-center justify-between gap-4 border-t border-border py-4 transition-[background-color,color] duration-200 ease-out motion-reduce:transition-none md:min-h-[3.75rem] md:py-5 ${
+      className={`connect-row group flex min-h-[3.25rem] items-center justify-between gap-4 transition-[background-color,color,border-color] duration-200 ease-out motion-reduce:transition-none md:min-h-[3.75rem] ${surfaceClass} ${
         primary
           ? "text-[clamp(1rem,2.5vw,1.125rem)] font-medium tracking-[0.06em]"
           : "text-sm tracking-[0.1em] md:text-[15px]"
-      } hover:bg-ink hover:text-light focus-visible:bg-ink focus-visible:text-light`}
+      } hover:border-ink hover:bg-ink hover:text-light focus-visible:border-ink focus-visible:bg-ink focus-visible:text-light ${className}`}
       {...(download ? { download: true } : {})}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
@@ -55,7 +64,7 @@ type PendingActionRowProps = {
 export function PendingActionRow({ label }: PendingActionRowProps) {
   return (
     <div
-      className="flex min-h-[3.25rem] items-center justify-between gap-4 border-t border-border py-4 md:min-h-[3.75rem] md:py-5"
+      className="flex min-h-[3.25rem] items-center justify-between gap-4 border border-border px-4 py-4 md:min-h-[3.75rem] md:py-5"
       aria-label={`${label} — link pending setup`}
     >
       <span className="text-sm tracking-[0.1em] text-muted md:text-[15px]">

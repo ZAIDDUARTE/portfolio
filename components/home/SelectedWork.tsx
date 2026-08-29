@@ -90,8 +90,11 @@ function ProjectCardDetails({
         {project.title}
       </h3>
 
-      <p className="mt-3 text-sm uppercase tracking-[0.12em] text-muted">
-        {project.subtitle}
+      <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm uppercase tracking-[0.12em] text-muted">
+        <span>{project.subtitle}</span>
+        <span className="border border-border px-2 py-0.5 text-[9px] tracking-[0.14em]">
+          {project.status}
+        </span>
       </p>
 
       {isActive ? (
@@ -101,7 +104,10 @@ function ProjectCardDetails({
             aria-hidden="true"
             className="project-rule-draw mb-6 h-px bg-border"
           />
-          <p className="text-base leading-relaxed text-ink">{project.hook}</p>
+          <p className="text-[10px] uppercase tracking-[0.14em] text-muted">
+            {project.role}
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-ink">{project.hook}</p>
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-[0.1em] text-muted">
             {project.domains.map((domain) => (
               <li key={domain}>{domain}</li>

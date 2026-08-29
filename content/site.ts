@@ -1,3 +1,8 @@
+function emptyToNull(value: string | undefined): string | null {
+  const trimmed = value?.trim();
+  return trimmed && trimmed.length > 0 ? trimmed : null;
+}
+
 export const siteConfig = {
   name: "Zaid Duartee",
   title: "Zaid Duartee — CTO & Technical Lead",
@@ -14,16 +19,25 @@ export const siteConfig = {
   year: "2026",
   role: "CTO / Technical Lead",
   descriptor: "Product & Engineering",
+  positioning:
+    "Technical leadership across AI, data, SaaS and geospatial systems.",
   connectDescription:
-    "Save Zaid Duartee’s professional contact details, view selected work, download his CV, or connect directly.",
-  /**
-   * TODO: Replace with WhatsApp click-to-chat URL once number is confirmed.
-   * Example format: https://wa.me/<countrycode><number>
-   */
-  whatsapp: null as string | null,
-  /**
-   * TODO: Replace with booking calendar URL once provider is confirmed.
-   * Example format: https://calendly.com/<handle>
-   */
-  calendar: null as string | null,
-};
+    "Book a conversation, save Zaid Duartee’s contact details, explore selected technical systems, or leave a private note.",
+  connectTitle: "Connect with Zaid Duartee",
+  /** Cal.com or other booking provider URL — set via NEXT_PUBLIC_BOOKING_URL */
+  booking: emptyToNull(process.env.NEXT_PUBLIC_BOOKING_URL),
+  /** WhatsApp click-to-chat URL — set via NEXT_PUBLIC_WHATSAPP_URL */
+  whatsapp: emptyToNull(process.env.NEXT_PUBLIC_WHATSAPP_URL),
+  /** Formspree (or compatible) endpoint — set via NEXT_PUBLIC_FEEDBACK_FORM_ENDPOINT */
+  feedbackFormEndpoint: emptyToNull(process.env.NEXT_PUBLIC_FEEDBACK_FORM_ENDPOINT),
+} as const;
+
+export function isConfiguredUrl(value: string | null): value is string {
+  if (!value) return false;
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === "https:" || parsed.protocol === "http:";
+  } catch {
+    return false;
+  }
+}
