@@ -13,27 +13,27 @@ export function ReproducibilityStatement() {
         </h2>
 
         <div className="md:grid md:grid-cols-12">
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted md:col-span-4 md:col-start-5">
+          <p className="type-eyebrow text-muted md:col-span-4 md:col-start-5">
             Built around
           </p>
 
           <p
             aria-hidden="true"
-            className="mt-4 text-[clamp(2.25rem,8vw,6rem)] font-medium leading-[0.95] tracking-[-0.035em] text-ink md:col-span-9 md:col-start-1 md:mt-6"
+            className="mt-4 text-[clamp(2.25rem,7vw,5.5rem)] font-medium leading-[0.95] tracking-[-0.035em] text-balance text-ink md:col-span-9 md:col-start-1 md:mt-6"
           >
             Reproducibility
           </p>
 
           <p
             aria-hidden="true"
-            className="mt-2 text-[clamp(2.25rem,8vw,6rem)] font-serif leading-[0.95] tracking-[-0.02em] text-muted md:col-span-3 md:col-start-9 md:mt-4 md:text-right"
+            className="type-display-serif mt-2 text-[clamp(2.25rem,7vw,5.5rem)] leading-[0.95] text-muted md:col-span-3 md:col-start-9 md:mt-4 md:text-right"
           >
             not
           </p>
 
           <p
             aria-hidden="true"
-            className="mt-2 text-[clamp(2.25rem,8vw,6rem)] font-medium leading-[0.95] tracking-[-0.035em] text-ink md:col-span-7 md:col-start-6 md:mt-4"
+            className="mt-2 text-[clamp(2.25rem,7vw,5.5rem)] font-medium leading-[0.95] tracking-[-0.035em] text-balance text-ink md:col-span-7 md:col-start-6 md:mt-4"
           >
             Assumption.
           </p>
@@ -51,10 +51,11 @@ export function ArchitectureStatement() {
         <h2 id="architecture-heading" className="sr-only">
           On architecture
         </h2>
-        <p className="max-w-4xl font-serif text-[clamp(1.75rem,5vw,3.5rem)] leading-[1.12] tracking-[-0.02em] text-ink">
+        <p className="type-editorial-lg max-w-3xl text-ink">
           Architecture earns trust
           <br />
-          when its assumptions, constraints, and evidence are explicit.
+          when its assumptions, constraints, and evidence are{" "}
+          <span className="type-serif-italic">explicit.</span>
         </p>
       </Reveal>
     </section>

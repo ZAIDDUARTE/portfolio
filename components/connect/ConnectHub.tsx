@@ -14,16 +14,12 @@ import { siteConfig } from "@/content/site";
 export function ConnectHero() {
   return (
     <header className="max-w-3xl">
-      <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
-        Connect
-      </p>
-      <h1 className="mt-5 text-[clamp(2.75rem,10vw,4.5rem)] font-medium leading-[0.92] tracking-[-0.03em] text-ink">
+      <p className="type-eyebrow text-muted">Connect</p>
+      <h1 className="type-display-serif mt-5 text-[clamp(2.75rem,10vw,4.5rem)] leading-[0.92] text-ink">
         {siteConfig.name}
       </h1>
-      <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
-        {siteConfig.role}
-      </p>
-      <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink md:text-lg">
+      <p className="mt-4 type-meta text-muted">{siteConfig.role}</p>
+      <p className="type-prose-lg mt-4 text-base text-ink md:text-lg">
         {siteConfig.positioning}
       </p>
       <p className="mt-4 text-[10px] uppercase tracking-[0.18em] text-muted">

@@ -22,7 +22,7 @@ export function AtlasFeature() {
 
         <h2
           id="atlas-heading"
-          className="mt-10 max-w-4xl text-[clamp(2rem,5.5vw,4rem)] font-medium leading-[1.02] tracking-[-0.03em]"
+          className="type-display-serif mt-10 max-w-3xl text-[clamp(2rem,5.5vw,4rem)] leading-[1.02] text-light"
         >
           Environmental Risk Intelligence
         </h2>
@@ -37,7 +37,7 @@ export function AtlasFeature() {
           ]}
         />
 
-        <p className="mt-10 max-w-2xl text-base leading-[1.7] text-light/80 md:text-lg">
+        <p className="type-prose-lg mt-10 text-base text-light/80 md:text-lg">
           {atlasProject.hook}
         </p>
 

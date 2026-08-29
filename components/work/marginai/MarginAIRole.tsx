@@ -9,13 +9,13 @@ export function MarginAIRole() {
       className="section-y bg-[#12141a] text-light"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-light/55">
+        <p className="type-eyebrow text-light/55">
           04 / My Role
         </p>
 
         <h2
           id="role-heading"
-          className="mt-8 max-w-3xl text-[clamp(2rem,5vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.03em]"
+          className="mt-8 type-h2"
         >
           {marginaiMeta.role} —
           <br />

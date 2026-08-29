@@ -9,7 +9,7 @@ export function MarginAIReflection() {
       className="section-y bg-border-subtle"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="type-eyebrow text-muted">
           15 / Reflection
         </p>
 

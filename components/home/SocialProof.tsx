@@ -15,19 +15,19 @@ export function SocialProof() {
 
         <div className="md:grid md:grid-cols-12">
           <figure className="md:col-span-7">
-            <blockquote className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-[1.2] tracking-[-0.015em] text-ink">
+            <blockquote className="type-pull-quote text-ink">
               &ldquo;{testimonials[1].quote}&rdquo;
             </blockquote>
-            <figcaption className="mt-6 text-[11px] uppercase tracking-[0.18em] text-muted">
+            <figcaption className="type-eyebrow mt-6 text-muted">
               — {testimonials[1].attribution}
             </figcaption>
           </figure>
 
           <figure className="mt-20 md:col-span-6 md:col-start-7 md:mt-32">
-            <blockquote className="font-serif text-[clamp(1.25rem,2.6vw,1.875rem)] leading-[1.25] tracking-[-0.01em] text-ink">
+            <blockquote className="type-pull-quote text-[clamp(1.25rem,2.6vw,1.875rem)] leading-[1.25] text-ink">
               &ldquo;{testimonials[0].quote}&rdquo;
             </blockquote>
-            <figcaption className="mt-6 text-[11px] uppercase tracking-[0.18em] text-muted">
+            <figcaption className="type-eyebrow mt-6 text-muted">
               — {testimonials[0].attribution}
             </figcaption>
           </figure>

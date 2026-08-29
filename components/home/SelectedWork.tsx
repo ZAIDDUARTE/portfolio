@@ -53,16 +53,16 @@ function ProjectCardDetails({
   return (
     <>
       <div className="flex items-baseline justify-between gap-4">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="type-section-index text-muted">
           {project.index}
         </p>
-        <p className="text-[10px] uppercase tracking-[0.16em] text-muted">
+        <p className="type-meta text-muted">
           Case / {project.caseNumber}
         </p>
       </div>
 
       <h3
-        className={`mt-3 font-medium leading-none tracking-[-0.02em] transition-colors duration-200 ${
+        className={`type-project-title mt-3 leading-none transition-colors duration-200 ${
           project.dominant
             ? "text-[clamp(3rem,5vw,4.5rem)]"
             : "text-[clamp(2.25rem,4vw,3.5rem)]"
@@ -71,7 +71,7 @@ function ProjectCardDetails({
         {project.title}
       </h3>
 
-      <p className="mt-3 text-sm uppercase tracking-[0.12em] text-muted">
+      <p className="mt-3 text-sm uppercase tracking-[0.1em] text-muted">
         {project.subtitle}
       </p>
 
@@ -82,10 +82,10 @@ function ProjectCardDetails({
             aria-hidden="true"
             className="project-rule-draw mb-6 h-px bg-border"
           />
-          <p className="text-[10px] uppercase tracking-[0.14em] text-muted">
+          <p className="type-meta text-muted">
             {project.role}
           </p>
-          <p className="mt-4 text-base leading-relaxed text-ink">{project.hook}</p>
+          <p className="mt-4 type-prose text-base text-ink">{project.hook}</p>
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-[0.1em] text-muted">
             {project.domains.map((domain) => (
               <li key={domain}>{domain}</li>
@@ -135,14 +135,14 @@ function MobileProjectCard({ project }: { project: Project }) {
   return (
     <article className="project-tap border-t border-border py-10 first:border-t-0 first:pt-0">
       <div className="flex items-baseline justify-between gap-4">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="type-section-index text-muted">
           {project.index}
         </p>
-        <p className="text-[10px] uppercase tracking-[0.16em] text-muted">
+        <p className="type-meta text-muted">
           Case / {project.caseNumber}
         </p>
       </div>
-      <h3 className="mt-3 text-[clamp(2rem,8vw,3.25rem)] font-medium leading-none tracking-[-0.02em]">
+      <h3 className="type-project-title mt-3 text-[clamp(2rem,8vw,3.25rem)] leading-none">
         {project.title}
       </h3>
       <p className="mt-2 text-sm uppercase tracking-[0.12em] text-muted">

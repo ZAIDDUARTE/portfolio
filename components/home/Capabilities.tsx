@@ -19,7 +19,7 @@ export function Capabilities() {
         <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-x-16 md:gap-y-14 lg:grid-cols-4">
           {capabilities.map((group) => (
             <div key={group.group}>
-              <h3 className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+              <h3 className="type-eyebrow text-muted">
                 {group.group}
               </h3>
               <ul className="mt-5 space-y-2">

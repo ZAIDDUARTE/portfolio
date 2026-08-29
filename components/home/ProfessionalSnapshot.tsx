@@ -11,7 +11,7 @@ export function ProfessionalSnapshot() {
 
         <div className="grid grid-cols-2 gap-px border border-border bg-border md:grid-cols-4 md:grid-rows-3">
           <div className="col-span-2 row-span-2 flex min-h-[220px] flex-col justify-end bg-canvas p-6 md:min-h-[280px] md:p-8">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+            <p className="type-eyebrow text-muted">
               Role
             </p>
             <p className="mt-3 text-[clamp(1.75rem,4vw,2.75rem)] font-medium leading-tight tracking-[-0.02em]">
@@ -20,7 +20,7 @@ export function ProfessionalSnapshot() {
           </div>
 
           <div className="flex min-h-[120px] flex-col justify-between bg-canvas p-5 md:p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+            <p className="type-eyebrow text-muted">
               Current
             </p>
             <p className="text-sm leading-snug md:text-base">
@@ -29,7 +29,7 @@ export function ProfessionalSnapshot() {
           </div>
 
           <div className="flex min-h-[120px] flex-col justify-between bg-canvas p-5 md:p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+            <p className="type-eyebrow text-muted">
               Base
             </p>
             <p className="text-sm leading-snug md:text-base">
@@ -38,7 +38,7 @@ export function ProfessionalSnapshot() {
           </div>
 
           <div className="col-span-2 flex min-h-[140px] flex-col justify-between bg-canvas p-5 md:col-span-2 md:min-h-[160px] md:p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+            <p className="type-eyebrow text-muted">
               Focus
             </p>
             <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base">
@@ -49,7 +49,7 @@ export function ProfessionalSnapshot() {
           </div>
 
           <div className="flex min-h-[120px] flex-col justify-between bg-canvas p-5 md:p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+            <p className="type-eyebrow text-muted">
               Education
             </p>
             <p className="text-sm leading-snug md:text-base">
@@ -58,7 +58,7 @@ export function ProfessionalSnapshot() {
           </div>
 
           <div className="flex min-h-[120px] flex-col justify-between bg-canvas p-5 md:p-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+            <p className="type-eyebrow text-muted">
               Connect
             </p>
             <a

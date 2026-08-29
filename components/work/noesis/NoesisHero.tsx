@@ -32,38 +32,38 @@ export function NoesisHero() {
           <Link
             href="/#work"
             data-cursor="back"
-            className="text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-ink"
+            className="type-meta text-muted transition-colors hover:text-ink"
           >
             ← Selected Systems
           </Link>
-          <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+          <p className="type-meta text-muted">
             Case / {noesisMeta.caseNumber}
           </p>
         </div>
 
         <div className="mt-auto max-w-4xl pt-16 md:pt-24">
-          <p className="hero-rise text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+          <p className="hero-rise type-meta text-muted">
             Case Study {noesisMeta.caseNumber} — {noesisMeta.subtitle}
           </p>
 
           <h1
             id="noesis-case-heading"
-            className="hero-rise hero-rise-delay-1 mt-5 text-[clamp(3.5rem,12vw,8rem)] font-medium leading-[0.9] tracking-[-0.04em]"
+            className="hero-rise hero-rise-delay-1 type-case-title mt-5 text-ink"
           >
             {noesisMeta.title}
           </h1>
 
-          <p className="hero-rise hero-rise-delay-2 mt-4 text-[clamp(1.25rem,3vw,2rem)] leading-[1.15] tracking-[-0.02em] text-ink/90">
+          <p className="hero-rise hero-rise-delay-2 mt-4 text-[clamp(1.125rem,2.5vw,1.75rem)] font-medium leading-[1.15] tracking-[-0.02em] text-balance text-ink/90">
             Environmental Health
             <br />
             Intelligence Platform
           </p>
 
-          <p className="hero-rise hero-rise-delay-3 mt-8 max-w-xl text-base leading-relaxed text-ink/80 md:text-lg">
+          <p className="hero-rise hero-rise-delay-3 type-prose-lg mt-8 text-base text-ink/80 md:text-lg">
             {noesisMeta.statement}
           </p>
 
-          <dl className="hero-rise hero-rise-delay-4 mt-10 flex flex-wrap gap-x-8 gap-y-3 text-[10px] uppercase tracking-[0.16em] text-muted">
+          <dl className="hero-rise hero-rise-delay-4 type-meta mt-10 flex flex-wrap gap-x-8 gap-y-3 text-muted">
             <div className="flex gap-2">
               <dt>Role /</dt>
               <dd className="text-ink/85">{noesisMeta.role}</dd>

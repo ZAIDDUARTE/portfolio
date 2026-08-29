@@ -9,7 +9,7 @@ export function AtlasValidation() {
       className="section-y editorial-rule"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="type-eyebrow text-muted">
           09 / Validation
         </p>
 
@@ -49,7 +49,7 @@ export function AtlasValidation() {
           </p>
         </div>
 
-        <p className="mt-16 max-w-3xl font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-[1.2] tracking-[-0.015em] md:mt-24">
+        <p className="mt-16 type-pull-quote max-w-3xl md:mt-24">
           We did not retune the methodology after seeing the result.
         </p>
       </Reveal>

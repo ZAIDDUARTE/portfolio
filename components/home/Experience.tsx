@@ -55,7 +55,7 @@ export function Experience() {
               </p>
 
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent">
+                <p className="type-eyebrow text-accent">
                   {entry.phase}
                 </p>
                 <h3 className="mt-3 text-xl font-medium md:text-2xl">

@@ -11,13 +11,13 @@ export function AtlasResolution() {
       className="section-y editorial-rule"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="type-eyebrow text-muted">
           07 / Resolution
         </p>
 
         <h2
           id="resolution-heading"
-          className="mt-8 max-w-3xl text-[clamp(2rem,5vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.03em]"
+          className="mt-8 type-h2"
         >
           {atlasResolutionCopy.headline}
         </h2>

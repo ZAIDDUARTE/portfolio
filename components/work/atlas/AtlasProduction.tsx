@@ -12,7 +12,7 @@ export function AtlasProduction() {
       className="section-y bg-dark text-light"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-light/55">
+        <p className="type-eyebrow text-light/55">
           08 / Production Engineering
         </p>
 

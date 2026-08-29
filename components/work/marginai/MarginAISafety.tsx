@@ -9,13 +9,13 @@ export function MarginAISafety() {
       className="section-y bg-border-subtle"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="type-eyebrow text-muted">
           08 / Safety & Fail-Open
         </p>
 
         <h2
           id="safety-heading"
-          className="mt-8 max-w-3xl text-[clamp(2rem,5vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.03em]"
+          className="mt-8 type-h2"
         >
           Prefer zero cost reduction
           <br />

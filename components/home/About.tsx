@@ -20,12 +20,12 @@ export function About() {
           About
         </h2>
 
-        <p className="mt-12 max-w-4xl font-serif text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.14] tracking-[-0.02em] text-ink">
+        <p className="type-editorial-lg mt-12 text-ink">
           I didn&rsquo;t follow a conventional route into technology.
         </p>
 
         <div className="mt-14 grid gap-14 md:mt-20 md:grid-cols-12 md:gap-x-16">
-          <div className="max-w-xl space-y-6 text-base leading-[1.7] text-ink md:col-span-5 md:text-lg">
+          <div className="type-prose max-w-xl space-y-6 text-base text-ink md:col-span-5 md:text-lg">
             <p>
               It started with commerce — ecommerce and affiliate work, the
               unglamorous business of making something actually sell. Frontend
@@ -33,7 +33,7 @@ export function About() {
               leadership across AI, data, SaaS and geospatial systems.
             </p>
 
-            <p className="font-serif text-[clamp(1.375rem,2.5vw,1.75rem)] leading-snug tracking-[-0.01em]">
+            <p className="type-display-serif text-[clamp(1.375rem,2.5vw,1.75rem)] leading-snug">
               I like complex systems.
             </p>
 
@@ -42,7 +42,7 @@ export function About() {
               engineering, data and business.
             </p>
 
-            <p className="font-serif text-[clamp(1.375rem,2.5vw,1.75rem)] leading-snug tracking-[-0.01em]">
+            <p className="type-display-serif text-[clamp(1.375rem,2.5vw,1.75rem)] leading-snug">
               I care about execution.
             </p>
 
@@ -68,7 +68,7 @@ export function About() {
               </div>
             </ClipReveal>
 
-            <figcaption className="mt-5 flex items-baseline justify-between gap-4 text-[10px] uppercase tracking-[0.16em] text-muted">
+            <figcaption className="type-meta mt-5 flex items-baseline justify-between gap-4 text-muted">
               <span>Fig. 02 — Zaid Duartee</span>
               <span>Islamabad / Riyadh</span>
             </figcaption>

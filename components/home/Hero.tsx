@@ -10,30 +10,30 @@ export function Hero() {
     >
       <div className="md:grid md:grid-cols-12 md:gap-8">
         <div className="md:col-span-8">
-          <p className="hero-rise text-[11px] font-medium uppercase tracking-[0.24em] text-muted">
+          <p className="hero-rise type-eyebrow text-muted">
             01 / Intro
           </p>
 
           <h1
             id="hero-heading"
-            className="hero-rise hero-rise-delay-1 mt-5 text-[clamp(3rem,9vw,6.875rem)] font-medium leading-[0.95] tracking-[-0.03em] text-ink"
+            className="hero-rise hero-rise-delay-1 mt-5 text-[clamp(2.75rem,9vw,6.5rem)] font-medium leading-[0.95] tracking-[-0.03em] text-balance text-ink"
           >
             ZAID DUARTEE
           </h1>
 
-          <p className="hero-rise hero-rise-delay-2 mt-5 text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+          <p className="hero-rise hero-rise-delay-2 mt-5 type-meta text-muted">
             CTO / Technical Lead
           </p>
 
-          <p className="hero-rise hero-rise-delay-3 mt-10 max-w-4xl text-[clamp(1.75rem,4.5vw,3.75rem)] leading-[1.12] tracking-[-0.02em] text-ink md:mt-[clamp(2rem,5svh,3rem)]">
+          <p className="hero-rise hero-rise-delay-3 mt-8 max-w-3xl text-[clamp(1.625rem,4vw,3.25rem)] leading-[1.1] tracking-[-0.02em] text-balance text-ink md:mt-[clamp(1.75rem,4svh,2.75rem)]">
             I turn complex technical ideas
             <br />
-            <span className="font-serif tracking-[-0.02em]">
+            <span className="type-serif-italic">
               into systems that can actually ship.
             </span>
           </p>
 
-          <p className="hero-rise hero-rise-delay-4 mt-7 text-base tracking-wide text-muted md:text-lg">
+          <p className="hero-rise hero-rise-delay-4 mt-6 type-meta text-muted">
             Product • Engineering • Data Systems
           </p>
 
@@ -79,17 +79,17 @@ export function Hero() {
           aria-label="Current base"
           className="hero-rise hero-rise-delay-2 hidden md:col-span-3 md:col-start-10 md:block"
         >
-          <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
+          <p className="type-meta text-muted">
             Currently
           </p>
-          <p className="mt-3 flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-ink">
+          <p className="mt-3 flex items-center gap-2 type-meta text-ink">
             <span
               aria-hidden="true"
               className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
             />
             {siteConfig.currentLocation}
           </p>
-          <p className="mt-1 pl-[14px] text-[11px] uppercase tracking-[0.16em] text-muted">
+          <p className="mt-1 pl-[14px] type-meta text-muted">
             {siteConfig.year}
           </p>
         </aside>

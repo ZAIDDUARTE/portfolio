@@ -8,7 +8,7 @@ export function AtlasProblem() {
       className="section-y editorial-rule"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="type-eyebrow text-muted">
           01 / The Problem
         </p>
 
@@ -45,7 +45,7 @@ export function AtlasProblem() {
           </div>
         </div>
 
-        <p className="mt-16 max-w-3xl font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-[1.2] tracking-[-0.015em] md:mt-24">
+        <p className="mt-16 type-pull-quote max-w-3xl md:mt-24">
           The problem was not simply to create a score.
           <br />
           The problem was to make environmental evidence reproducible enough to

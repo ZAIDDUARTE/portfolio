@@ -28,14 +28,14 @@ export function FinalContact() {
           <div>
             <h2
               id="connect-heading"
-              className="max-w-3xl text-[clamp(2rem,5.5vw,4rem)] font-medium leading-[1.05] tracking-[-0.035em]"
+              className="max-w-3xl text-[clamp(2rem,5.5vw,4rem)] font-medium leading-[1.05] tracking-[-0.035em] text-balance"
             >
               Start with the right
               <br />
-              conversation.
+              <span className="type-serif-italic font-normal">conversation.</span>
             </h2>
 
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-light/75 md:text-lg">
+            <p className="type-prose-lg mt-6 text-base text-light/75 md:text-lg">
               {siteConfig.positioning}
             </p>
 

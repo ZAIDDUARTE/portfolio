@@ -9,13 +9,13 @@ export function NoesisValidation() {
       className="section-y bg-[#1a2332] text-light"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-light/55">
+        <p className="type-eyebrow text-light/55">
           10 / Validation & Uncertainty
         </p>
 
         <h2
           id="validation-heading"
-          className="mt-8 max-w-3xl text-[clamp(2rem,5vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.03em]"
+          className="mt-8 type-h2"
         >
           What was tested.
           <br />

@@ -16,9 +16,7 @@ export function SectionLabel({
   return (
     <div>
       <p
-        className={`text-[11px] font-medium uppercase tracking-[0.22em] ${
-          isLight ? "text-light/75" : "text-muted"
-        }`}
+        className={`type-eyebrow ${isLight ? "text-light/75" : "text-muted"}`}
       >
         {number} / {title}
       </p>
@@ -45,7 +43,7 @@ export function MetaCluster({
 
   return (
     <dl
-      className={`flex flex-wrap gap-x-8 gap-y-3 text-[10px] uppercase tracking-[0.16em] ${
+      className={`type-meta flex flex-wrap gap-x-8 gap-y-3 ${
         isLight ? "text-light/60" : "text-muted"
       } ${className}`}
     >

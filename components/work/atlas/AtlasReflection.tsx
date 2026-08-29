@@ -8,7 +8,7 @@ export function AtlasReflection() {
       className="section-y editorial-rule"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="type-eyebrow text-muted">
           16 / Reflection
         </p>
 
