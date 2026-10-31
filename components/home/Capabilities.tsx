@@ -10,7 +10,7 @@ export function Capabilities() {
       className="section-y editorial-rule"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <SectionLabel number="04" title="Capabilities" />
+        <SectionLabel number="05" title="Capabilities" />
 
         <h2 id="capabilities-heading" className="sr-only">
           Capabilities

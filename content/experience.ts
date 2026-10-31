@@ -22,78 +22,86 @@ export const experience: ExperienceEntry[] = [
     description: "Led frontend delivery for client and product work.",
   },
   {
+    year: "2024—NOW",
+    phase: "CLIENTS",
+    title: "Freelance Frontend & Integrations",
+    organization: "Upwork",
+    description:
+      "459+ recorded hours delivering React/Next.js, WordPress, SaaS frontend, and integration work across multiple 5-star frontend contracts.",
+  },
+  {
     year: "2025",
     phase: "PRODUCTS",
     title: "Lead Full-Stack Developer",
     organization: "International Clients",
-    description: "Owned end-to-end SaaS and product delivery.",
+    description: "Owned end-to-end SaaS and product delivery for commercial software projects.",
   },
   {
     year: "2025—NOW",
     phase: "SYSTEMS",
-    title: "CTO / Technical Lead",
+    title: "Technical Lead",
     organization: "Beyond Intelligence",
     description:
-      "Leading technical direction across AI, data, SaaS, geospatial and risk systems.",
+      "Technical delivery across AI, data, SaaS, geospatial and risk systems — including ATLAS and related platforms.",
   },
 ];
 
 export const experienceProgression = [
   "COMMERCE",
   "INTERFACES",
+  "CLIENTS",
   "PRODUCTS",
   "SYSTEMS",
 ] as const;
 
 export const capabilities = [
   {
-    group: "TECHNICAL LEADERSHIP",
+    group: "FRONTEND",
     items: [
-      "Technical strategy",
-      "Architecture",
-      "Delivery planning",
-      "Product scoping",
-      "QA & governance",
-      "Cross-functional execution",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Dashboards & admin panels",
+      "WordPress customization",
+      "Responsive UI",
+    ],
+  },
+  {
+    group: "INTEGRATIONS",
+    items: [
+      "REST APIs",
+      "GraphQL",
+      "Authentication flows",
+      "AI chatbot integrations",
+      "Voice assistant wiring",
+      "Third-party services",
+    ],
+  },
+  {
+    group: "SAAS & BACKEND",
+    items: [
+      "SaaS frontend maintenance",
+      "FastAPI",
+      "PostgreSQL",
+      "Reporting workflows",
+      "API contracts",
+      "Debugging existing apps",
     ],
   },
   {
     group: "SYSTEMS",
     items: [
-      "Backend systems",
-      "SaaS architecture",
-      "APIs",
-      "Authentication",
-      "Integrations",
-      "Cloud infrastructure",
-    ],
-  },
-  {
-    group: "DATA & INTELLIGENCE",
-    items: [
-      "Geospatial systems",
-      "Environmental data",
-      "Data pipelines",
-      "Predictive workflows",
-      "Applied AI / LLM systems",
-    ],
-  },
-  {
-    group: "ENGINEERING",
-    items: [
-      "Python",
-      "FastAPI",
-      "Flask",
-      "PostgreSQL / PostGIS",
-      "React",
-      "Next.js",
-      "TypeScript",
-      "AWS",
-      "Docker",
+      "Data processing",
+      "Geospatial / environmental systems",
+      "Applied AI workflows",
+      "Cloud delivery",
+      "QA & validation",
+      "Product scoping",
     ],
   },
 ] as const;
 
+/** Existing public-safe attributions already published on the portfolio. */
 export const testimonials = [
   {
     quote:

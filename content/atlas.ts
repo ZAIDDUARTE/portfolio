@@ -4,7 +4,7 @@
  */
 
 export const atlasMeta = {
-  caseNumber: "001",
+  caseNumber: "003",
   title: "ATLAS",
   subtitle: "Environmental Risk Intelligence",
   platformTitle: "Environmental Risk Intelligence Platform",

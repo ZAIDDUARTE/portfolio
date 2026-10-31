@@ -14,6 +14,7 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   { href: "/#work", label: "Work", sectionId: "work" },
+  { href: "/#services", label: "Services", sectionId: "services" },
   { href: "/#experience", label: "Experience", sectionId: "experience" },
   { href: "/#about", label: "About", sectionId: "about" },
   { href: siteConfig.cv, label: "CV", external: true },

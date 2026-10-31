@@ -1,15 +1,25 @@
 # Portfolio Context — Zaid Duartee
 
 > Living context for humans and AI agents working on this repository.
-> Last audited: 2026-08-29
+> Last audited: 2026-10-31
 
 ## Project purpose
 
-Executive technical portfolio for **Zaid Duartee** (CTO / Technical Lead).
-Positions credibility in product, engineering, data systems, geospatial
-intelligence, SaaS, and applied AI — with three published case studies.
+Client-facing technical portfolio for **Zaid Duartee**
+(**React & Next.js Developer | SaaS, WordPress & AI Integrations**).
+Positions credibility for Upwork clients, SaaS founders, and businesses needing
+frontend delivery, WordPress work, API integrations, and AI-assisted web apps —
+while preserving deeper technical case studies.
 
 **Production URL:** https://zaid-portfolio-dusky.vercel.app
+
+## Positioning (verified)
+
+- Role framing: React & Next.js Developer | SaaS, WordPress & AI Integrations
+- Rate: $15/hour
+- Upwork: 459+ recorded hours; multiple 5-star frontend contracts
+- Do **not** invent earnings, testimonials, clients, or unsupported production claims
+- Upwork profile URL: configure via `NEXT_PUBLIC_UPWORK_URL` (not hardcoded until supplied)
 
 ## Deployment
 
@@ -27,41 +37,45 @@ intelligence, SaaS, and applied AI — with three published case studies.
 | Cal.com booking | **Configured** — public default in `siteConfig` |
 | WhatsApp | **Configured** — public default in `siteConfig` |
 | Formspree | **Unconfigured** — email fallback active on Leave a Note |
+| Upwork CTA | **Needs URL** — `NEXT_PUBLIC_UPWORK_URL` |
 | Connect QR | **Enabled** — encodes production `/connect` URL |
 
 ## Technical systems positioning
 
-All three published case studies (ATLAS, Noesis, MarginAI) describe **technical
-implementation complete within each system’s defined scope**.
+ATLAS, Noesis, and MarginAI describe **technical implementation complete within
+each system’s defined scope**.
+
+Alexander and Satori describe **verified contribution areas** only.
 
 **Do not claim:** customer adoption, commercial outcomes, revenue, market
-performance, or achieved cost savings unless new verified evidence is added.
-
-**Distinction:** technical completion ≠ commercial proof. Safety boundaries
-(non-diagnostic, non-causal, fail-open) are product constraints — not
-incomplete-stage disclaimers.
+performance, completed telephony integrations (unless newly verified), or
+achieved cost savings unless new verified evidence is added.
 
 ## Case studies
 
-| # | Project | Route | Status |
-|---|---------|-------|--------|
-| 001 | ATLAS | `/work/atlas` | **Published** |
-| 002 | Noesis | `/work/noesis` | **Published** |
-| 003 | MarginAI | `/work/marginai` | **Published** |
+| # | Project | Route | Homepage | Status |
+|---|---------|-------|----------|--------|
+| 001 | Alexander | `/work/alexander` | Featured flagship | **Published** (dashboard screenshot connected; demo video optional) |
+| 002 | Satori | `/work/satori` | Featured | **Published** (demo media pending) |
+| 003 | ATLAS | `/work/atlas` | Featured | **Published** (local demo video connected) |
+| 004 | Noesis | `/work/noesis` | Archive link | **Published** |
+| 005 | MarginAI | `/work/marginai` | Archive link | **Published** |
 
-### Case-study navigation chain
+### Featured navigation chain
 
 ```
-ATLAS (001) → Noesis (002) → MarginAI (003) → Selected Work / Connect
-MarginAI closing also links back to Noesis
+Alexander (001) → Satori (002) → ATLAS (003)
+ATLAS closing still links into Noesis → MarginAI for the systems trilogy
 ```
 
 ## Routes
 
 | Route | Status | Purpose |
 |-------|--------|---------|
-| `/` | Complete | Homepage narrative |
+| `/` | Complete | Homepage narrative + services + CTAs |
 | `/connect` | Complete | Connect hub, booking, QR, private note |
+| `/work/alexander` | Complete | Alexander case study |
+| `/work/satori` | Complete | Satori case study |
 | `/work/atlas` | Complete | ATLAS case study |
 | `/work/noesis` | Complete | Noesis case study |
 | `/work/marginai` | Complete | MarginAI case study |
@@ -69,10 +83,10 @@ MarginAI closing also links back to Noesis
 
 ## Component map (high level)
 
-- `components/home/*` — Homepage sections
-- `components/work/atlas/*` — ATLAS case study sections
-- `components/work/noesis/*` — Noesis case study sections
-- `components/work/marginai/*` — MarginAI case study sections
+- `components/home/*` — Homepage sections (incl. Services)
+- `components/work/shared/*` — Shared case-study section primitives
+- `components/work/atlas|noesis|marginai/*` — Deep technical case studies
+- `components/ui/ProjectVideo.tsx` — Local / YouTube / Vimeo demo player
 - `components/connect/*` — Connect page, booking modal, visitor note form
 - `content/*.ts` — All copy and structured data
 
@@ -82,40 +96,23 @@ MarginAI closing also links back to Noesis
 - **Layout:** `max-w-[1400px]`, `section-pad`, `section-y`
 - **Always respect** `prefers-reduced-motion`
 
-## Completed work
+## Missing assets / info from owner
 
-- Full homepage with three published case studies
-- Connect page with booking, QR, vCard, private note fallback
-- ATLAS, Noesis, MarginAI case studies with JSON-LD
-- Public booking and WhatsApp defaults
-- `.vercelignore` for safe CLI deployment
+- Public Upwork profile URL (`NEXT_PUBLIC_UPWORK_URL`)
+- Alexander demo video or YouTube/Vimeo URL (+ optional poster)
+- Satori demo video or YouTube/Vimeo URL (+ optional poster)
+- Optional public-safe screenshots for Alexander / Satori
 
-## Unfinished work
-
-- Custom domain (`zaidduartee.com`)
-- Formspree endpoint for private note form
-- GitHub automatic Vercel deployment hookup
-
-## MarginAI evidence boundary
-
-> MarginAI is a completed technical system within documented scope. Do not
-> claim customer adoption, broad SDK compatibility, achieved savings, or
-> external production scale without new verified evidence.
-
-Private source (never commit):
-
-- `content/case-study-source/` — text + diagrams
-
-## Local QA artifacts
-
-- **`.screenshots/`** — Local only. **Must not be committed.**
+Loose MP4s found on `D:\` (unverified ownership/content) — do not auto-attach
+without confirmation.
 
 ## Rules for future AI agents
 
 1. **Content lives in `content/`** — not hardcoded in components
 2. **Never put `content/case-study-source/` in `public/`**
 3. **Don't commit `.screenshots/`**
-4. **Technical completion ≠ commercial claims** — see positioning above
+4. **Technical completion ≠ commercial claims**
 5. **Run `npm run lint`, `tsc`, `build`** before claiming done
 6. **Don't invent metrics, clients, or testimonials**
-7. **MarginAI:** no achieved savings or customer adoption without evidence
+7. **Don't fabricate video URLs or broken embeds**
+8. **MarginAI / ATLAS / Noesis:** no customer adoption claims without evidence

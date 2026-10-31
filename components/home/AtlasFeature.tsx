@@ -18,7 +18,7 @@ export function AtlasFeature() {
       className="section-y bg-dark text-light"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <SectionLabel number="01" title="Atlas" tone="light" />
+        <SectionLabel number="03" title="Atlas" tone="light" />
 
         <h2
           id="atlas-heading"

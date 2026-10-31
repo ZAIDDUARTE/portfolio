@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Magnetic } from "@/components/ui/Magnetic";
-import { siteConfig } from "@/content/site";
+import { isConfiguredUrl, siteConfig } from "@/content/site";
 
 export function Hero() {
   return (
@@ -22,19 +22,19 @@ export function Hero() {
           </h1>
 
           <p className="hero-rise hero-rise-delay-2 mt-5 type-meta text-muted">
-            CTO / Technical Lead
+            {siteConfig.positioning}
           </p>
 
           <p className="hero-rise hero-rise-delay-3 mt-8 max-w-3xl text-[clamp(1.625rem,4vw,3.25rem)] leading-[1.1] tracking-[-0.02em] text-balance text-ink md:mt-[clamp(1.75rem,4svh,2.75rem)]">
-            I turn complex technical ideas
+            I build and fix React, Next.js, and WordPress products
             <br />
             <span className="type-serif-italic">
-              into systems that can actually ship.
+              with clean integrations that actually ship.
             </span>
           </p>
 
           <p className="hero-rise hero-rise-delay-4 mt-6 type-meta text-muted">
-            Product • Engineering • Data Systems
+            SaaS frontends · API integrations · AI-assisted web apps · {siteConfig.rateLabel}
           </p>
 
           <div className="hero-rise hero-rise-delay-5 mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
@@ -42,14 +42,31 @@ export function Hero() {
               <Link
                 href="#work"
                 data-cursor="view"
-                data-cursor-label="SYSTEMS"
+                data-cursor-label="PROJECTS"
                 className="tap-active inline-flex min-h-12 items-center text-base font-medium text-accent link-underline md:text-lg"
               >
-                View Selected Work →
+                View Projects →
               </Link>
             </Magnetic>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-ink md:text-base">
+              <Link href="#services" className="link-underline">
+                Services
+              </Link>
+              <Link href="/connect" className="link-underline">
+                Contact Me
+              </Link>
+              {isConfiguredUrl(siteConfig.upwork) ? (
+                <a
+                  href={siteConfig.upwork}
+                  data-cursor="visit"
+                  className="link-underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hire on Upwork
+                </a>
+              ) : null}
               <a
                 href={siteConfig.cv}
                 data-cursor="open"
@@ -59,24 +76,12 @@ export function Hero() {
               >
                 CV
               </a>
-              <a
-                href={siteConfig.linkedin}
-                data-cursor="visit"
-                className="link-underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <Link href="/connect" className="link-underline">
-                Connect
-              </Link>
             </div>
           </div>
         </div>
 
         <aside
-          aria-label="Current base"
+          aria-label="Availability"
           className="hero-rise hero-rise-delay-2 hidden md:col-span-3 md:col-start-10 md:block"
         >
           <p className="type-meta text-muted">
@@ -87,10 +92,13 @@ export function Hero() {
               aria-hidden="true"
               className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
             />
-            {siteConfig.currentLocation}
+            Available for projects
           </p>
           <p className="mt-1 pl-[14px] type-meta text-muted">
-            {siteConfig.year}
+            {siteConfig.currentLocation} · {siteConfig.year}
+          </p>
+          <p className="mt-6 type-meta text-muted">
+            {siteConfig.upworkHours} Upwork hours
           </p>
         </aside>
       </div>
@@ -102,10 +110,10 @@ export function Hero() {
           href="#work"
           className="text-[11px] uppercase tracking-[0.16em] text-muted transition-colors duration-200 hover:text-ink md:tracking-[0.18em]"
         >
-          ↓ Selected Systems
+          ↓ Featured Case Studies
         </Link>
         <p className="text-[10px] uppercase tracking-[0.16em] text-muted md:tracking-[0.18em]">
-          Rev / 2026.08
+          Rev / 2026.10
         </p>
       </div>
     </section>

@@ -10,6 +10,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${siteConfig.url}/work/alexander`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteConfig.url}/work/satori`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${siteConfig.url}/work/atlas`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -19,13 +31,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteConfig.url}/work/noesis`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.8,
     },
     {
       url: `${siteConfig.url}/work/marginai`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.8,
     },
     {
       url: `${siteConfig.url}/connect`,
