@@ -1,5 +1,5 @@
-import { projects } from "@/content/projects";
-import { siteConfig } from "@/content/site";
+import { featuredProjects, projects } from "@/content/projects";
+import { isConfiguredUrl, siteConfig } from "@/content/site";
 
 export type CursorHint = "view" | "talk" | "open" | "visit" | "save";
 
@@ -29,16 +29,16 @@ export function hasConnectQr(): boolean {
 
 export const conversationTopics = [
   {
-    id: "ai-saas",
-    label: "AI, data and SaaS systems",
+    id: "react-next",
+    label: "React / Next.js delivery",
   },
   {
-    id: "geospatial",
-    label: "Geospatial and environmental intelligence",
+    id: "wordpress-saas",
+    label: "WordPress and SaaS frontend",
   },
   {
-    id: "product-partnerships",
-    label: "Technical product, implementation and partnerships",
+    id: "ai-integrations",
+    label: "API and AI integrations",
   },
 ] as const;
 
@@ -53,7 +53,7 @@ export const noteContextOptions = [
 
 export type NoteContext = (typeof noteContextOptions)[number];
 
-export const connectCaseStudies = projects.map((project) => ({
+export const connectCaseStudies = featuredProjects.map((project) => ({
   id: project.id,
   title: project.title,
   href: project.href,
@@ -61,24 +61,12 @@ export const connectCaseStudies = projects.map((project) => ({
 }));
 
 export const connectSecondaryActions: ConnectAction[] = [
-  {
-    id: "atlas",
-    label: "VIEW ATLAS",
-    href: "/work/atlas",
-    cursor: "view",
-  },
-  {
-    id: "noesis",
-    label: "VIEW NOESIS",
-    href: "/work/noesis",
-    cursor: "view",
-  },
-  {
-    id: "marginai",
-    label: "VIEW MARGINAI",
-    href: "/work/marginai",
-    cursor: "view",
-  },
+  ...featuredProjects.map((project) => ({
+    id: project.id,
+    label: `VIEW ${project.title.toUpperCase()}`,
+    href: project.href,
+    cursor: "view" as const,
+  })),
   {
     id: "cv",
     label: "DOWNLOAD CV",
@@ -100,12 +88,31 @@ export const connectSecondaryActions: ConnectAction[] = [
     external: true,
     cursor: "visit",
   },
+  ...(isConfiguredUrl(siteConfig.upwork)
+    ? [
+        {
+          id: "upwork",
+          label: "HIRE ON UPWORK",
+          href: siteConfig.upwork,
+          external: true,
+          cursor: "visit" as const,
+        },
+      ]
+    : []),
+  ...projects
+    .filter((project) => project.featured === false)
+    .map((project) => ({
+      id: project.id,
+      label: `VIEW ${project.title.toUpperCase()}`,
+      href: project.href,
+      cursor: "view" as const,
+    })),
 ];
 
 export const visitorNoteCopy = {
   title: "Leave a note",
   description:
-    "Share an introduction, observation, recommendation, or reason to continue the conversation. Submissions are private and reviewed personally.",
+    "Share an introduction, project brief, or reason to continue the conversation. Submissions are private and reviewed personally.",
   privacy:
     "Your message is used only to respond or continue the conversation. It is not published without separate permission.",
   permissionLabel:

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Instrument_Serif } from "next/font/google";
 import { Header } from "@/components/layout/Header";
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
         url: "/og/og-image.svg",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — CTO & Technical Lead`,
+        alt: `${siteConfig.name} — React & Next.js Developer`,
       },
     ],
   },
@@ -64,7 +65,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: ReactNode;
+}>) {
   return (
     <html
       lang="en"

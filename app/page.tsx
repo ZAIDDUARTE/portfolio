@@ -1,4 +1,5 @@
 import { About } from "@/components/home/About";
+import { AlexanderFeature } from "@/components/home/AlexanderFeature";
 import { AtlasFeature } from "@/components/home/AtlasFeature";
 import { Capabilities } from "@/components/home/Capabilities";
 import { Experience } from "@/components/home/Experience";
@@ -6,6 +7,7 @@ import { FinalContact } from "@/components/home/FinalContact";
 import { Hero } from "@/components/home/Hero";
 import { ProfessionalSnapshot } from "@/components/home/ProfessionalSnapshot";
 import { SelectedWork } from "@/components/home/SelectedWork";
+import { Services } from "@/components/home/Services";
 import { SocialProof } from "@/components/home/SocialProof";
 import {
   ArchitectureStatement,
@@ -17,6 +19,8 @@ export default function Home() {
     <main id="main-content">
       <Hero />
       <SelectedWork />
+      <AlexanderFeature />
+      <Services />
       <AtlasFeature />
       <ReproducibilityStatement />
       <ProfessionalSnapshot />

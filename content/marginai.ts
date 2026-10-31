@@ -5,7 +5,7 @@
  */
 
 export const marginaiMeta = {
-  caseNumber: "003",
+  caseNumber: "005",
   title: "MarginAI",
   subtitle: "LLM Inference Optimization",
   platformTitle: "LLM Cost-Optimization Infrastructure",

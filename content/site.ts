@@ -5,24 +5,28 @@ function emptyToNull(value: string | undefined): string | null {
 
 export const siteConfig = {
   name: "Zaid Duartee",
-  title: "Zaid Duartee — CTO & Technical Lead",
+  title: "Zaid Duartee — React & Next.js Developer",
   description:
-    "Technical leader working across product, engineering, data systems, geospatial intelligence, SaaS and AI infrastructure.",
+    "React & Next.js developer specializing in SaaS frontends, WordPress, API integrations, and AI-powered web applications. Available for Upwork and direct projects.",
   url: "https://zaid-portfolio-dusky.vercel.app",
   email: "zaidduartee@gmail.com",
   linkedin: "https://www.linkedin.com/in/zaidduartee",
   github: "https://github.com/ZAIDDUARTE",
+  /** Set NEXT_PUBLIC_UPWORK_URL to your public Upwork profile URL */
+  upwork: emptyToNull(process.env.NEXT_PUBLIC_UPWORK_URL),
   cv: "/cv/Zaid_Duartee_Executive_CV_2026.pdf",
   vcard: "/contact/zaid-duartee.vcf",
   location: "Islamabad / Riyadh",
   currentLocation: "Riyadh",
   year: "2026",
-  role: "CTO / Technical Lead",
-  descriptor: "Product & Engineering",
+  role: "React & Next.js Developer",
+  descriptor: "SaaS, WordPress & AI Integrations",
   positioning:
-    "Technical leadership across AI, data, SaaS and geospatial systems.",
+    "React & Next.js Developer | SaaS, WordPress & AI Integrations",
+  rateLabel: "$15/hour",
+  upworkHours: "459+",
   connectDescription:
-    "Book a conversation, save Zaid Duartee’s contact details, explore selected technical systems, or leave a private note.",
+    "Book a conversation, explore case studies, or leave a private note.",
   connectTitle: "Connect with Zaid Duartee",
   /** Cal.com booking URL — override via NEXT_PUBLIC_BOOKING_URL */
   booking:

@@ -36,7 +36,7 @@ export function Experience() {
       className="section-y editorial-rule"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <SectionLabel number="03" title="Experience" />
+        <SectionLabel number="04" title="Experience" />
 
         <h2 id="experience-heading" className="sr-only">
           Experience

@@ -18,7 +18,7 @@ export function FinalContact() {
       className="contact-surface section-y bg-dark text-light"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <SectionLabel number="06" title="Connect" tone="light" />
+        <SectionLabel number="07" title="Connect" tone="light" />
 
         <div
           className={`mt-10 grid gap-12 lg:items-start lg:gap-16 ${
@@ -30,19 +30,31 @@ export function FinalContact() {
               id="connect-heading"
               className="max-w-3xl text-[clamp(2rem,5.5vw,4rem)] font-medium leading-[1.05] tracking-[-0.035em] text-balance"
             >
-              Start with the right
+              Ready to hire for your
               <br />
-              <span className="type-serif-italic font-normal">conversation.</span>
+              <span className="type-serif-italic font-normal">next build?</span>
             </h2>
 
             <p className="type-prose-lg mt-6 text-base text-light/75 md:text-lg">
-              {siteConfig.positioning}
+              {siteConfig.positioning} · {siteConfig.rateLabel} ·{" "}
+              {siteConfig.upworkHours} Upwork hours
             </p>
 
             <div className="mt-10 grid max-w-xl gap-3 sm:grid-cols-2">
               <div className="sm:col-span-2">
                 <BookingExperience label="Book a conversation" />
               </div>
+              {isConfiguredUrl(siteConfig.upwork) ? (
+                <a
+                  href={siteConfig.upwork}
+                  data-cursor="visit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tap-active inline-flex min-h-12 items-center justify-center border border-accent bg-accent px-4 text-sm font-medium tracking-[0.04em] text-light transition-colors hover:bg-light hover:text-ink sm:col-span-2"
+                >
+                  Hire Me on Upwork ↗
+                </a>
+              ) : null}
               <a
                 href={siteConfig.vcard}
                 data-cursor="save"
@@ -76,9 +88,16 @@ export function FinalContact() {
                 </a>
               </Magnetic>
               <Link
+                href="/#work"
+                data-cursor="view"
+                className="tap-active inline-flex min-h-12 items-center justify-center border border-light/25 px-4 text-sm tracking-[0.04em] text-light/80 transition-colors hover:border-light hover:text-light"
+              >
+                View Case Studies →
+              </Link>
+              <Link
                 href="/connect#leave-a-note"
                 data-cursor="talk"
-                className="tap-active inline-flex min-h-12 items-center justify-center border border-light/25 px-4 text-sm tracking-[0.04em] text-light/80 transition-colors hover:border-light hover:text-light sm:col-span-2"
+                className="tap-active inline-flex min-h-12 items-center justify-center border border-light/25 px-4 text-sm tracking-[0.04em] text-light/80 transition-colors hover:border-light hover:text-light"
               >
                 Leave a private note →
               </Link>
@@ -124,6 +143,17 @@ export function FinalContact() {
               >
                 GitHub
               </a>
+              {isConfiguredUrl(siteConfig.upwork) ? (
+                <a
+                  href={siteConfig.upwork}
+                  data-cursor="visit"
+                  className={secondaryLinkClass}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Upwork
+                </a>
+              ) : null}
               <a
                 href={siteConfig.cv}
                 data-cursor="open"

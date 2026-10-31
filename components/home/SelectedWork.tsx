@@ -6,7 +6,11 @@ import { useCallback, useState } from "react";
 import { SectionLabel } from "@/components/layout/SectionLabel";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
-import { projects, type Project } from "@/content/projects";
+import {
+  archiveProjects,
+  featuredProjects,
+  type Project,
+} from "@/content/projects";
 
 function ProjectPreview({
   project,
@@ -174,14 +178,15 @@ function MobileProjectCard({ project }: { project: Project }) {
 }
 
 export function SelectedWork() {
-  const [activeId, setActiveId] = useState(projects[0].id);
+  const [activeId, setActiveId] = useState(featuredProjects[0].id);
 
   const handleActivate = useCallback((id: string) => {
     setActiveId(id);
   }, []);
 
   const activeProject =
-    projects.find((project) => project.id === activeId) ?? projects[0];
+    featuredProjects.find((project) => project.id === activeId) ??
+    featuredProjects[0];
 
   return (
     <section
@@ -190,15 +195,20 @@ export function SelectedWork() {
       className="section-y editorial-rule"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <SectionLabel number="02" title="Selected Systems" />
+        <SectionLabel number="02" title="Featured Case Studies" />
 
         <h2 id="work-heading" className="sr-only">
-          Selected Systems
+          Featured Case Studies
         </h2>
+
+        <p className="mt-6 max-w-2xl type-prose text-base text-muted md:text-lg">
+          Flagship work first: Alexander AI receptionist SaaS, Satori platform
+          contribution, and ATLAS environmental intelligence systems.
+        </p>
 
         <div className="mt-12 hidden lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24">
           <div className="flex flex-col">
-            {projects.map((project) => (
+            {featuredProjects.map((project) => (
               <DesktopProjectCard
                 key={project.id}
                 project={project}
@@ -216,7 +226,7 @@ export function SelectedWork() {
             <p className="sr-only">
               Previewing {activeProject.title}: {activeProject.subtitle}
             </p>
-            {projects.map((project) => (
+            {featuredProjects.map((project) => (
               <ProjectPreview
                 key={project.id}
                 project={project}
@@ -227,10 +237,34 @@ export function SelectedWork() {
         </div>
 
         <div className="mt-10 lg:hidden">
-          {projects.map((project) => (
+          {featuredProjects.map((project) => (
             <MobileProjectCard key={project.id} project={project} />
           ))}
         </div>
+
+        {archiveProjects.length > 0 ? (
+          <div className="mt-16 border-t border-border pt-10">
+            <p className="type-eyebrow text-muted">Additional systems</p>
+            <ul className="mt-6 flex flex-col gap-4 md:flex-row md:flex-wrap md:gap-x-10 md:gap-y-4">
+              {archiveProjects.map((project) => (
+                <li key={project.id}>
+                  <Link
+                    href={project.href}
+                    className="group inline-flex min-h-12 items-center gap-3 text-base text-ink"
+                  >
+                    <span className="type-meta text-muted">
+                      {project.caseNumber}
+                    </span>
+                    <span className="font-medium link-underline group-hover:text-accent">
+                      {project.title}
+                    </span>
+                    <span className="text-sm text-muted">{project.subtitle}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </Reveal>
     </section>
   );

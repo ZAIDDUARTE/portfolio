@@ -14,26 +14,29 @@ export function ProfessionalSnapshot() {
             <p className="type-eyebrow text-muted">
               Role
             </p>
-            <p className="mt-3 text-[clamp(1.75rem,4vw,2.75rem)] font-medium leading-tight tracking-[-0.02em]">
-              CTO / Technical Lead
+            <p className="mt-3 text-[clamp(1.5rem,3.5vw,2.5rem)] font-medium leading-tight tracking-[-0.02em]">
+              React & Next.js Developer
+            </p>
+            <p className="mt-3 text-sm text-muted md:text-base">
+              SaaS, WordPress & AI Integrations
             </p>
           </div>
 
           <div className="flex min-h-[120px] flex-col justify-between bg-canvas p-5 md:p-6">
             <p className="type-eyebrow text-muted">
-              Current
+              Upwork
             </p>
             <p className="text-sm leading-snug md:text-base">
-              Beyond Intelligence
+              {siteConfig.upworkHours} hours
             </p>
           </div>
 
           <div className="flex min-h-[120px] flex-col justify-between bg-canvas p-5 md:p-6">
             <p className="type-eyebrow text-muted">
-              Base
+              Rate
             </p>
             <p className="text-sm leading-snug md:text-base">
-              {siteConfig.location}
+              {siteConfig.rateLabel}
             </p>
           </div>
 
@@ -42,18 +45,18 @@ export function ProfessionalSnapshot() {
               Focus
             </p>
             <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base">
-              <li>Product</li>
-              <li>Engineering</li>
-              <li>Data Systems</li>
+              <li>React / Next.js</li>
+              <li>WordPress</li>
+              <li>APIs & AI</li>
             </ul>
           </div>
 
           <div className="flex min-h-[120px] flex-col justify-between bg-canvas p-5 md:p-6">
             <p className="type-eyebrow text-muted">
-              Education
+              Base
             </p>
             <p className="text-sm leading-snug md:text-base">
-              Law + Data Science
+              {siteConfig.location}
             </p>
           </div>
 

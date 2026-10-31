@@ -14,40 +14,42 @@ export function About() {
       className="section-y editorial-rule"
     >
       <Reveal className="section-pad mx-auto max-w-[1400px]">
-        <SectionLabel number="05" title="About" />
+        <SectionLabel number="06" title="About" />
 
         <h2 id="about-heading" className="sr-only">
           About
         </h2>
 
         <p className="type-editorial-lg mt-12 text-ink">
-          I didn&rsquo;t follow a conventional route into technology.
+          I help businesses ship and stabilize modern web products.
         </p>
 
         <div className="mt-14 grid gap-14 md:mt-20 md:grid-cols-12 md:gap-x-16">
           <div className="type-prose max-w-xl space-y-6 text-base text-ink md:col-span-5 md:text-lg">
             <p>
-              It started with commerce — ecommerce and affiliate work, the
-              unglamorous business of making something actually sell. Frontend
-              leadership came next, then full-stack delivery, then technical
-              leadership across AI, data, SaaS and geospatial systems.
+              My path started in commerce, moved into frontend delivery, then
+              into SaaS and integration work for clients — including 459+ hours
+              on Upwork across multiple 5-star frontend contracts. Alongside
+              freelance delivery, I contribute to commercial software and
+              AI-enabled product systems.
             </p>
 
             <p className="type-display-serif text-[clamp(1.375rem,2.5vw,1.75rem)] leading-snug">
-              I like complex systems.
+              I care about clean execution.
             </p>
 
             <p>
-              Especially when the problem lives somewhere between product,
-              engineering, data and business.
+              Especially when the work sits between React/Next.js interfaces,
+              WordPress sites, APIs, and AI-assisted workflows that need to hold
+              up in production.
             </p>
 
             <p className="type-display-serif text-[clamp(1.375rem,2.5vw,1.75rem)] leading-snug">
-              I care about execution.
+              Available for hire.
             </p>
 
             <p>
-              Alongside technology, I am studying Law and Data Science.
+              Alongside client work, I continue studying Law and Data Science.
             </p>
           </div>
 

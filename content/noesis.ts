@@ -5,7 +5,7 @@
  */
 
 export const noesisMeta = {
-  caseNumber: "002",
+  caseNumber: "004",
   title: "Noesis",
   subtitle: "Environmental Health Intelligence",
   platformTitle: "Environmental Health Intelligence Platform",
