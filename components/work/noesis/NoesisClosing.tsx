@@ -3,7 +3,7 @@ import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 import { marginaiProject } from "@/content/projects";
 import { noesisMeta } from "@/content/noesis";
-import { siteConfig } from "@/content/site";
+import { isConfiguredUrl, siteConfig } from "@/content/site";
 
 export function NoesisClosing() {
   return (
@@ -51,13 +51,26 @@ export function NoesisClosing() {
         </div>
 
         <div className="mt-12 flex flex-col gap-8 md:mt-16 md:flex-row md:items-center md:justify-between">
-          <Link
-            href="/connect"
-            data-cursor="view"
-            className="text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-ink"
-          >
-            Connect ↗
-          </Link>
+          <div className="flex flex-wrap gap-x-8 gap-y-4">
+            <Link
+              href="/connect"
+              data-cursor="view"
+              className="text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-ink"
+            >
+              Connect ↗
+            </Link>
+            {isConfiguredUrl(siteConfig.upwork) ? (
+              <a
+                href={siteConfig.upwork}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="visit"
+                className="text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-ink"
+              >
+                Hire on Upwork ↗
+              </a>
+            ) : null}
+          </div>
 
           <div>
             <p className="text-[11px] uppercase tracking-[0.18em] text-muted">

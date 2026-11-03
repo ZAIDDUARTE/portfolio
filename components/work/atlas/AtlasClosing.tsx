@@ -3,7 +3,7 @@ import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 import { atlasMeta } from "@/content/atlas";
 import { noesisProject } from "@/content/projects";
-import { siteConfig } from "@/content/site";
+import { isConfiguredUrl, siteConfig } from "@/content/site";
 
 export function AtlasClosing() {
   return (
@@ -44,13 +44,26 @@ export function AtlasClosing() {
         </div>
 
         <div className="mt-12 flex flex-col gap-8 md:mt-16 md:flex-row md:items-center md:justify-between">
-          <Link
-            href="/#work"
-            data-cursor="back"
-            className="text-[11px] uppercase tracking-[0.18em] text-light/65 transition-colors hover:text-light"
-          >
-            ← Back to Selected Systems
-          </Link>
+          <div className="flex flex-wrap gap-x-8 gap-y-4">
+            <Link
+              href="/#work"
+              data-cursor="back"
+              className="text-[11px] uppercase tracking-[0.18em] text-light/65 transition-colors hover:text-light"
+            >
+              ← Back to Selected Systems
+            </Link>
+            {isConfiguredUrl(siteConfig.upwork) ? (
+              <a
+                href={siteConfig.upwork}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="visit"
+                className="text-[11px] uppercase tracking-[0.18em] text-light/65 transition-colors hover:text-light"
+              >
+                Hire on Upwork ↗
+              </a>
+            ) : null}
+          </div>
 
           <div>
             <p className="text-[11px] uppercase tracking-[0.18em] text-light/55">
