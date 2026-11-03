@@ -151,7 +151,7 @@ export function FinalContact() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Upwork
+                  Message Me on Upwork
                 </a>
               ) : null}
               <a

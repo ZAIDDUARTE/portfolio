@@ -3,7 +3,7 @@ import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 import { alexanderMeta } from "@/content/alexander";
 import { satoriProject } from "@/content/projects";
-import { siteConfig } from "@/content/site";
+import { isConfiguredUrl, siteConfig } from "@/content/site";
 
 export function AlexanderClosing() {
   return (
@@ -67,6 +67,17 @@ export function AlexanderClosing() {
             >
               Contact Me →
             </Link>
+            {isConfiguredUrl(siteConfig.upwork) ? (
+              <a
+                href={siteConfig.upwork}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="visit"
+                className="text-[11px] uppercase tracking-[0.18em] text-light/65 transition-colors hover:text-light"
+              >
+                Hire on Upwork ↗
+              </a>
+            ) : null}
           </div>
 
           <div>

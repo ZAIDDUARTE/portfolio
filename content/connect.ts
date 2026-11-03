@@ -91,8 +91,8 @@ export const connectSecondaryActions: ConnectAction[] = [
   ...(isConfiguredUrl(siteConfig.upwork)
     ? [
         {
-          id: "upwork",
-          label: "HIRE ON UPWORK",
+          id: "upwork-message",
+          label: "MESSAGE ME ON UPWORK",
           href: siteConfig.upwork,
           external: true,
           cursor: "visit" as const,

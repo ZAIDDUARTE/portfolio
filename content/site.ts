@@ -12,8 +12,10 @@ export const siteConfig = {
   email: "zaidduartee@gmail.com",
   linkedin: "https://www.linkedin.com/in/zaidduartee",
   github: "https://github.com/ZAIDDUARTE",
-  /** Set NEXT_PUBLIC_UPWORK_URL to your public Upwork profile URL */
-  upwork: emptyToNull(process.env.NEXT_PUBLIC_UPWORK_URL),
+  /** Upwork profile — override via NEXT_PUBLIC_UPWORK_URL */
+  upwork:
+    emptyToNull(process.env.NEXT_PUBLIC_UPWORK_URL) ??
+    "https://www.upwork.com/freelancers/~015dcfc95d6b6b8758",
   cv: "/cv/Zaid_Duartee_Executive_CV_2026.pdf",
   vcard: "/contact/zaid-duartee.vcf",
   location: "Islamabad / Riyadh",
@@ -26,7 +28,7 @@ export const siteConfig = {
   rateLabel: "$15/hour",
   upworkHours: "459+",
   connectDescription:
-    "Book a conversation, explore case studies, or leave a private note.",
+    "Book a conversation, hire on Upwork, explore case studies, or leave a private note.",
   connectTitle: "Connect with Zaid Duartee",
   /** Cal.com booking URL — override via NEXT_PUBLIC_BOOKING_URL */
   booking:

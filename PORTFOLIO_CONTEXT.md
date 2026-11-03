@@ -19,7 +19,7 @@ while preserving deeper technical case studies.
 - Rate: $15/hour
 - Upwork: 459+ recorded hours; multiple 5-star frontend contracts
 - Do **not** invent earnings, testimonials, clients, or unsupported production claims
-- Upwork profile URL: configure via `NEXT_PUBLIC_UPWORK_URL` (not hardcoded until supplied)
+- Upwork profile: `https://www.upwork.com/freelancers/~015dcfc95d6b6b8758` (default + `NEXT_PUBLIC_UPWORK_URL`)
 
 ## Deployment
 
@@ -37,7 +37,7 @@ while preserving deeper technical case studies.
 | Cal.com booking | **Configured** — public default in `siteConfig` |
 | WhatsApp | **Configured** — public default in `siteConfig` |
 | Formspree | **Unconfigured** — email fallback active on Leave a Note |
-| Upwork CTA | **Needs URL** — `NEXT_PUBLIC_UPWORK_URL` |
+| Upwork CTA | **Configured** — verified profile URL |
 | Connect QR | **Enabled** — encodes production `/connect` URL |
 
 ## Technical systems positioning
@@ -98,13 +98,10 @@ ATLAS closing still links into Noesis → MarginAI for the systems trilogy
 
 ## Missing assets / info from owner
 
-- Public Upwork profile URL (`NEXT_PUBLIC_UPWORK_URL`)
 - Alexander demo video or YouTube/Vimeo URL (+ optional poster)
 - Satori demo video or YouTube/Vimeo URL (+ optional poster)
 - Optional public-safe screenshots for Alexander / Satori
-
-Loose MP4s found on `D:\` (unverified ownership/content) — do not auto-attach
-without confirmation.
+- Formspree endpoint (`NEXT_PUBLIC_FEEDBACK_FORM_ENDPOINT`)
 
 ## Rules for future AI agents
 

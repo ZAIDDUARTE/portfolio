@@ -9,7 +9,7 @@ import {
   conversationTopics,
   hasConnectQr,
 } from "@/content/connect";
-import { siteConfig } from "@/content/site";
+import { isConfiguredUrl, siteConfig } from "@/content/site";
 
 export function ConnectHero() {
   return (
@@ -59,6 +59,15 @@ export function ConnectPrimaryGrid() {
         cursor="talk"
         className="sm:col-span-2"
       />
+      {isConfiguredUrl(siteConfig.upwork) ? (
+        <ActionRow
+          label="HIRE ON UPWORK"
+          href={siteConfig.upwork}
+          external
+          cursor="visit"
+          className="sm:col-span-2"
+        />
+      ) : null}
     </div>
   );
 }

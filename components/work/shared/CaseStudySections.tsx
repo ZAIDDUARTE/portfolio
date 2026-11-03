@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { ProjectVideo } from "@/components/ui/ProjectVideo";
 import { Reveal } from "@/components/ui/Reveal";
-import { siteConfig } from "@/content/site";
+import { isConfiguredUrl, siteConfig } from "@/content/site";
 
 type MetaBlock = {
   caseNumber: string;
@@ -308,6 +308,17 @@ export function CaseStudyClosing({ next }: { next: NextLink }) {
             >
               Contact Me →
             </Link>
+            {isConfiguredUrl(siteConfig.upwork) ? (
+              <a
+                href={siteConfig.upwork}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="visit"
+                className="text-[11px] uppercase tracking-[0.18em] text-light/65 transition-colors hover:text-light"
+              >
+                Hire on Upwork ↗
+              </a>
+            ) : null}
           </div>
 
           <div>
