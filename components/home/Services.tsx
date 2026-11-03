@@ -73,11 +73,28 @@ export function Services() {
                 </p>
                 <div>
                   <h3 className="text-lg font-medium tracking-[-0.02em] text-ink md:text-xl">
-                    {service.title}
+                    {service.href ? (
+                      <Link
+                        href={service.href}
+                        className="transition-colors hover:text-accent"
+                      >
+                        {service.title}
+                      </Link>
+                    ) : (
+                      service.title
+                    )}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted md:text-base">
                     {service.description}
                   </p>
+                  {service.href ? (
+                    <Link
+                      href={service.href}
+                      className="mt-3 inline-flex text-sm text-accent link-underline"
+                    >
+                      Service details →
+                    </Link>
+                  ) : null}
                 </div>
               </li>
             ))}

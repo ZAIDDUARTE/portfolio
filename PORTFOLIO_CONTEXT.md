@@ -1,7 +1,7 @@
 # Portfolio Context — Zaid Duartee
 
 > Living context for humans and AI agents working on this repository.
-> Last audited: 2026-10-31
+> Last audited: 2026-11-04
 
 ## Project purpose
 
@@ -36,7 +36,7 @@ while preserving deeper technical case studies.
 |-------------|--------|
 | Cal.com booking | **Configured** — public default in `siteConfig` |
 | WhatsApp | **Configured** — public default in `siteConfig` |
-| Formspree | **Unconfigured** — email fallback active on Leave a Note |
+| Formspree | **Unconfigured** — email fallback active on Project inquiry (no false success) |
 | Upwork CTA | **Configured** — verified profile URL |
 | Connect QR | **Enabled** — encodes production `/connect` URL |
 
@@ -73,13 +73,16 @@ ATLAS closing still links into Noesis → MarginAI for the systems trilogy
 | Route | Status | Purpose |
 |-------|--------|---------|
 | `/` | Complete | Homepage narrative + services + CTAs |
-| `/connect` | Complete | Connect hub, booking, QR, private note |
+| `/connect` | Complete | Connect hub, booking, QR, project inquiry |
+| `/services/nextjs-support` | Complete | Next.js lead-gen service page |
+| `/services/wordpress-development` | Complete | WordPress lead-gen service page |
+| `/services/ai-integrations` | Complete | AI integrations lead-gen service page |
 | `/work/alexander` | Complete | Alexander case study |
 | `/work/satori` | Complete | Satori case study |
 | `/work/atlas` | Complete | ATLAS case study |
 | `/work/noesis` | Complete | Noesis case study |
 | `/work/marginai` | Complete | MarginAI case study |
-| `/robots.txt`, `/sitemap.xml` | Complete | SEO |
+| `/robots.txt`, `/sitemap.xml` | Complete | SEO (includes service routes) |
 
 ## Component map (high level)
 
@@ -101,7 +104,8 @@ ATLAS closing still links into Noesis → MarginAI for the systems trilogy
 - Alexander demo video or YouTube/Vimeo URL (+ optional poster)
 - Satori demo video or YouTube/Vimeo URL (+ optional poster)
 - Optional public-safe screenshots for Alexander / Satori
-- Formspree endpoint (`NEXT_PUBLIC_FEEDBACK_FORM_ENDPOINT`)
+- Formspree endpoint (`NEXT_PUBLIC_FEEDBACK_FORM_ENDPOINT`) for real inquiry delivery
+- Enable Vercel Web Analytics in the project dashboard (package already wired; Hobby page views only)
 
 ## Rules for future AI agents
 

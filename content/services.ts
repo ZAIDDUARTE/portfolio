@@ -2,6 +2,8 @@ export type Service = {
   id: string;
   title: string;
   description: string;
+  /** Optional dedicated service landing page */
+  href?: string;
 };
 
 /**
@@ -14,12 +16,14 @@ export const services: Service[] = [
     title: "React & Next.js development",
     description:
       "Build and improve product UIs, marketing sites, and application frontends with clean, maintainable React and Next.js code.",
+    href: "/services/nextjs-support",
   },
   {
     id: "wordpress",
     title: "WordPress customization & troubleshooting",
     description:
       "Fix, customize, and extend WordPress sites — themes, plugins, workflows, and integration issues that block launches.",
+    href: "/services/wordpress-development",
   },
   {
     id: "saas-frontend",
@@ -38,6 +42,7 @@ export const services: Service[] = [
     title: "AI chatbot & voice assistant integrations",
     description:
       "Integrate AI chat and voice experiences into web products — wiring providers, workflows, and UI with careful testing.",
+    href: "/services/ai-integrations",
   },
   {
     id: "dashboards",

@@ -8,7 +8,7 @@ import {
   ConnectQrSection,
   ConnectSecondaryNav,
 } from "@/components/connect/ConnectHub";
-import { VisitorNoteForm } from "@/components/connect/VisitorNoteForm";
+import { ProjectInquiryForm } from "@/components/connect/ProjectInquiryForm";
 import { connectAssets } from "@/content/connect";
 import { siteConfig } from "@/content/site";
 
@@ -64,7 +64,7 @@ export default function ConnectPage() {
         </aside>
       </div>
 
-      <VisitorNoteForm />
+      <ProjectInquiryForm />
 
       <footer className="mt-16 border-t border-border pt-8 md:mt-24">
         <p className="text-[10px] uppercase tracking-[0.2em] text-muted">

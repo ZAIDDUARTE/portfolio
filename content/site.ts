@@ -28,7 +28,7 @@ export const siteConfig = {
   rateLabel: "$15/hour",
   upworkHours: "459+",
   connectDescription:
-    "Book a conversation, hire on Upwork, explore case studies, or leave a private note.",
+    "Book a conversation, send a project inquiry, hire on Upwork, or explore case studies.",
   connectTitle: "Connect with Zaid Duartee",
   /** Cal.com booking URL — override via NEXT_PUBLIC_BOOKING_URL */
   booking:
