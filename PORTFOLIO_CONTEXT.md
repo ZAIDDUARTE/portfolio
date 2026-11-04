@@ -36,7 +36,7 @@ while preserving deeper technical case studies.
 |-------------|--------|
 | Cal.com booking | **Configured** — public default in `siteConfig` |
 | WhatsApp | **Configured** — public default in `siteConfig` |
-| Formspree | **Unconfigured** — email fallback active on Project inquiry (no false success) |
+| Formspree | **Unconfigured** — `/connect` uses email-compose inquiry (mailto) until endpoint is set; no false success |
 | Upwork CTA | **Configured** — verified profile URL |
 | Connect QR | **Enabled** — encodes production `/connect` URL |
 

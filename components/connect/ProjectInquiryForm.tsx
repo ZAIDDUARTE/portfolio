@@ -63,6 +63,23 @@ function validate(values: FormState): FieldErrors {
   return errors;
 }
 
+function buildMailto(values: FormState): string {
+  const body = [
+    `Name: ${values.name.trim()}`,
+    `Email: ${values.email.trim()}`,
+    values.projectType ? `Project type: ${values.projectType}` : null,
+    values.budget ? `Budget: ${values.budget}` : null,
+    values.deadline.trim() ? `Deadline: ${values.deadline.trim()}` : null,
+    "",
+    "Brief:",
+    values.brief.trim(),
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(inquiryCopy.mailtoSubject)}&body=${encodeURIComponent(body)}`;
+}
+
 export function ProjectInquiryForm() {
   const endpoint = siteConfig.feedbackFormEndpoint;
   const configured = isConfiguredUrl(endpoint);
@@ -78,22 +95,7 @@ export function ProjectInquiryForm() {
     mountedAt.current = Date.now();
   }, []);
 
-  const mailtoFallback = useMemo(() => {
-    const body = [
-      `Name: ${values.name.trim()}`,
-      `Email: ${values.email.trim()}`,
-      values.projectType ? `Project type: ${values.projectType}` : null,
-      values.budget ? `Budget: ${values.budget}` : null,
-      values.deadline.trim() ? `Deadline: ${values.deadline.trim()}` : null,
-      "",
-      "Brief:",
-      values.brief.trim(),
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    return `mailto:${siteConfig.email}?subject=${encodeURIComponent(inquiryCopy.mailtoSubject)}&body=${encodeURIComponent(body)}`;
-  }, [values]);
+  const mailtoHref = useMemo(() => buildMailto(values), [values]);
 
   const updateField = <K extends keyof FormState>(
     key: K,
@@ -104,11 +106,24 @@ export function ProjectInquiryForm() {
     setFormError(null);
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleEmailCompose = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (values.honeypot.trim()) return;
+
+    const nextErrors = validate(values);
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      return;
+    }
+
+    // Opens the visitor's mail client — does not claim server delivery.
+    window.location.href = buildMailto(values);
+  };
+
+  const handleEndpointSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (status === "loading" || status === "success") return;
 
-    // Honeypot: silently discard bots without claiming a real delivery.
     if (values.honeypot.trim()) {
       setStatus("idle");
       return;
@@ -128,7 +143,7 @@ export function ProjectInquiryForm() {
     }
 
     if (!configured || !endpoint) {
-      setFormError(inquiryCopy.unconfiguredBody);
+      setFormError(inquiryCopy.errorBody);
       setStatus("error");
       return;
     }
@@ -184,11 +199,11 @@ export function ProjectInquiryForm() {
         {inquiryCopy.title}
       </h2>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-        {inquiryCopy.description}
+        {configured ? inquiryCopy.description : inquiryCopy.descriptionEmailOnly}
       </p>
 
       <div aria-live="polite" aria-atomic="true" className="mt-6">
-        {status === "success" ? (
+        {configured && status === "success" ? (
           <div className="border border-border bg-border-subtle p-6">
             <p className="text-sm font-medium uppercase tracking-[0.14em] text-ink">
               {inquiryCopy.successTitle}
@@ -198,7 +213,11 @@ export function ProjectInquiryForm() {
             </p>
           </div>
         ) : (
-          <form noValidate onSubmit={handleSubmit} className="mt-8 grid gap-6">
+          <form
+            noValidate
+            onSubmit={configured ? handleEndpointSubmit : handleEmailCompose}
+            className="mt-8 grid gap-6"
+          >
             <div className="sr-only" aria-hidden="true">
               <label htmlFor="inquiry-company-website">Company website</label>
               <input
@@ -373,31 +392,52 @@ export function ProjectInquiryForm() {
               </div>
             </div>
 
-            {status === "error" && formError ? (
+            {configured && status === "error" && formError ? (
               <p className="text-sm text-accent" role="alert">
                 {formError}
               </p>
             ) : null}
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="tap-active inline-flex min-h-12 items-center justify-center border border-ink bg-ink px-6 text-sm font-medium tracking-[0.04em] text-light transition-colors hover:bg-accent hover:border-accent disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {status === "loading"
-                  ? inquiryCopy.submittingLabel
-                  : inquiryCopy.submitLabel}
-              </button>
-              <a
-                href={mailtoFallback}
-                className="tap-active inline-flex min-h-12 items-center justify-center border border-border px-6 text-sm tracking-[0.04em] text-ink transition-colors hover:border-ink"
-              >
-                {inquiryCopy.emailFallbackLabel}
-              </a>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap">
+              {configured ? (
+                <>
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="tap-active inline-flex min-h-12 items-center justify-center border border-ink bg-ink px-6 text-sm font-medium tracking-[0.04em] text-light transition-colors hover:bg-accent hover:border-accent disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {status === "loading"
+                      ? inquiryCopy.submittingLabel
+                      : inquiryCopy.submitLabel}
+                  </button>
+                  <a
+                    href={mailtoHref}
+                    className="tap-active inline-flex min-h-12 items-center justify-center border border-border px-6 text-sm tracking-[0.04em] text-ink transition-colors hover:border-ink"
+                  >
+                    {inquiryCopy.emailFallbackLabel}
+                  </a>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="submit"
+                    className="tap-active inline-flex min-h-12 items-center justify-center border border-ink bg-ink px-6 text-sm font-medium tracking-[0.04em] text-light transition-colors hover:bg-accent hover:border-accent"
+                  >
+                    {inquiryCopy.emailPrimaryLabel}
+                  </button>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="tap-active inline-flex min-h-12 items-center justify-center border border-border px-6 text-sm tracking-[0.04em] text-ink transition-colors hover:border-ink"
+                  >
+                    {inquiryCopy.directEmailLabel}: {siteConfig.email}
+                  </a>
+                </>
+              )}
             </div>
 
-            <p className="text-sm leading-relaxed text-muted">{inquiryCopy.privacy}</p>
+            <p className="text-sm leading-relaxed text-muted">
+              {configured ? inquiryCopy.privacy : inquiryCopy.privacyEmailOnly}
+            </p>
           </form>
         )}
       </div>
